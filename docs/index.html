@@ -39,6 +39,7 @@ td:first-child{display:flex;align-items:center;gap:6px}
 td:first-child a:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .edit-link{flex-shrink:0;font-weight:400;opacity:.45;text-decoration:none}
 .edit-link:hover{opacity:1;color:var(--accent-2)}
+.delete-link:hover{color:var(--down)}
 a{color:var(--text);text-decoration:none;font-weight:600}
 a:hover{color:var(--accent-2)}
 .note{color:var(--muted)}
@@ -54,7 +55,7 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
   <button class="stat" onclick="document.getElementById('up-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Up</div><div class="value" style="color:var(--up)">84</div></button>
   <button class="stat" onclick="document.getElementById('down-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Down</div><div class="value" style="color:var(--down)">5</div></button>
 </div>
-<p class="updated">Last checked: 22/07/2026, 11:47:55 UTC · updates hourly</p>
+<p class="updated">Last checked: 22/07/2026, 11:50:10 UTC · updates hourly</p>
 <input type="search" id="searchBox" class="search" placeholder="🔎 Search a site by name…" oninput="filterSites(this.value)" />
 <p id="searchEmpty" class="hidden" style="color:var(--muted);font-size:13px;margin:-10px 0 16px">No sites match "<span id="searchEmptyTerm"></span>"</p>
 <div class="columns">
@@ -66,40 +67,45 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
           <td>
             <a href="https://judaica-n-more.com" target="_blank" rel="noopener" title="https://judaica-n-more.com">judaica-n-more.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">107 ms</td>
+          <td class="nowrap">57 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND judaica-n-more.com">getaddrinfo ENOTFOUND judaica-n-more.com</td>
         </tr>
 <tr data-name="re-live.co.il">
           <td>
             <a href="https://re-live.co.il" target="_blank" rel="noopener" title="https://re-live.co.il">re-live.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">44 ms</td>
+          <td class="nowrap">204 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND re-live.co.il">getaddrinfo ENOTFOUND re-live.co.il</td>
         </tr>
 <tr data-name="tkinsoles.com">
           <td>
             <a href="https://tkinsoles.com" target="_blank" rel="noopener" title="https://tkinsoles.com">tkinsoles.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">526 ms</td>
+          <td class="nowrap">637 ms</td>
           <td class="note" title="certificate has expired">certificate has expired</td>
         </tr>
 <tr data-name="urirapoport.com">
           <td>
             <a href="https://urirapoport.com" target="_blank" rel="noopener" title="https://urirapoport.com">urirapoport.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">626 ms</td>
+          <td class="nowrap">545 ms</td>
           <td class="note" title="Hostname/IP does not match certificate&#39;s altnames: Host: urirapoport.com. is not in the cert&#39;s altnames: DNS:www.urirapoport.com">Hostname/IP does not match certificate&#39;s altnames: Host: urirapoport.com. is not in the cert&#39;s altnames: DNS:www.urirapoport.com</td>
         </tr>
 <tr data-name="www.winnergy.org.il">
           <td>
             <a href="https://www.winnergy.org.il" target="_blank" rel="noopener" title="https://www.winnergy.org.il">www.winnergy.org.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">179 ms</td>
+          <td class="nowrap">61 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND www.winnergy.org.il">getaddrinfo ENOTFOUND www.winnergy.org.il</td>
         </tr></tbody>
     </table></div>
@@ -112,672 +118,756 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
           <td>
             <a href="https://2monitor.com" target="_blank" rel="noopener" title="https://2monitor.com">2monitor.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">3040 ms</td>
+          <td class="nowrap">4370 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="militarydvrs.com">
           <td>
             <a href="https://militarydvrs.com" target="_blank" rel="noopener" title="https://militarydvrs.com">militarydvrs.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">833 ms</td>
+          <td class="nowrap">3527 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="goldtec.co.il">
           <td>
             <a href="https://goldtec.co.il" target="_blank" rel="noopener" title="https://goldtec.co.il">goldtec.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">4393 ms</td>
+          <td class="nowrap">5441 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="goldtecsys.com">
           <td>
             <a href="https://goldtecsys.com" target="_blank" rel="noopener" title="https://goldtecsys.com">goldtecsys.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">2589 ms</td>
+          <td class="nowrap">3812 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="adh-law.co.il">
           <td>
             <a href="https://adh-law.co.il" target="_blank" rel="noopener" title="https://adh-law.co.il">adh-law.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1102 ms</td>
+          <td class="nowrap">1758 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="aleia-hai.co.il">
           <td>
             <a href="https://aleia-hai.co.il" target="_blank" rel="noopener" title="https://aleia-hai.co.il">aleia-hai.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">530 ms</td>
+          <td class="nowrap">1259 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="alhagova.co.il">
           <td>
             <a href="https://alhagova.co.il" target="_blank" rel="noopener" title="https://alhagova.co.il">alhagova.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">104 ms</td>
+          <td class="nowrap">772 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="alin-beitnoam.org.il">
           <td>
             <a href="https://alin-beitnoam.org.il" target="_blank" rel="noopener" title="https://alin-beitnoam.org.il">alin-beitnoam.org.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1133 ms</td>
+          <td class="nowrap">1687 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="bensela.co.il">
           <td>
             <a href="https://bensela.co.il" target="_blank" rel="noopener" title="https://bensela.co.il">bensela.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">116 ms</td>
+          <td class="nowrap">300 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="bloch-design.com">
           <td>
             <a href="https://bloch-design.com" target="_blank" rel="noopener" title="https://bloch-design.com">bloch-design.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">161 ms</td>
+          <td class="nowrap">461 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="campus.sydmedicaled.com">
           <td>
             <a href="https://campus.sydmedicaled.com" target="_blank" rel="noopener" title="https://campus.sydmedicaled.com">campus.sydmedicaled.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1682 ms</td>
+          <td class="nowrap">2044 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="checknet.ai">
           <td>
             <a href="https://checknet.ai" target="_blank" rel="noopener" title="https://checknet.ai">checknet.ai</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">85 ms</td>
+          <td class="nowrap">240 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="colorsway.com">
           <td>
             <a href="https://colorsway.com" target="_blank" rel="noopener" title="https://colorsway.com">colorsway.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">3694 ms</td>
+          <td class="nowrap">3683 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="corner1992.com">
           <td>
             <a href="https://corner1992.com" target="_blank" rel="noopener" title="https://corner1992.com">corner1992.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">620 ms</td>
+          <td class="nowrap">3945 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="danielaz.com">
           <td>
             <a href="https://danielaz.com" target="_blank" rel="noopener" title="https://danielaz.com">danielaz.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">115 ms</td>
+          <td class="nowrap">125 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="davidifergan.co.il">
           <td>
             <a href="https://davidifergan.co.il" target="_blank" rel="noopener" title="https://davidifergan.co.il">davidifergan.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">109 ms</td>
+          <td class="nowrap">180 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="ddi.co.il">
           <td>
             <a href="https://ddi.co.il" target="_blank" rel="noopener" title="https://ddi.co.il">ddi.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">107 ms</td>
+          <td class="nowrap">165 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="deadseaguardians.org">
           <td>
             <a href="https://deadseaguardians.org" target="_blank" rel="noopener" title="https://deadseaguardians.org">deadseaguardians.org</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">90 ms</td>
+          <td class="nowrap">240 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="dov-grau.co.il">
           <td>
             <a href="https://dov-grau.co.il" target="_blank" rel="noopener" title="https://dov-grau.co.il">dov-grau.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">914 ms</td>
+          <td class="nowrap">898 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="drabba.co.il">
           <td>
             <a href="https://drabba.co.il" target="_blank" rel="noopener" title="https://drabba.co.il">drabba.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1003 ms</td>
+          <td class="nowrap">1299 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="drbenshabat.co.il">
           <td>
             <a href="https://drbenshabat.co.il" target="_blank" rel="noopener" title="https://drbenshabat.co.il">drbenshabat.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">205 ms</td>
+          <td class="nowrap">192 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="ed-softwaresolutions.ae">
           <td>
             <a href="https://ed-softwaresolutions.ae" target="_blank" rel="noopener" title="https://ed-softwaresolutions.ae">ed-softwaresolutions.ae</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">490 ms</td>
+          <td class="nowrap">614 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="elina-emanuel.co.il">
           <td>
             <a href="https://elina-emanuel.co.il" target="_blank" rel="noopener" title="https://elina-emanuel.co.il">elina-emanuel.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">976 ms</td>
+          <td class="nowrap">1086 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="frog-lock.com">
           <td>
             <a href="https://frog-lock.com" target="_blank" rel="noopener" title="https://frog-lock.com">frog-lock.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">731 ms</td>
+          <td class="nowrap">851 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="funtasea-swim.com">
           <td>
             <a href="https://funtasea-swim.com" target="_blank" rel="noopener" title="https://funtasea-swim.com">funtasea-swim.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">121 ms</td>
+          <td class="nowrap">112 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="go-swimming.co.il">
           <td>
             <a href="https://go-swimming.co.il" target="_blank" rel="noopener" title="https://go-swimming.co.il">go-swimming.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">125 ms</td>
+          <td class="nowrap">280 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="goldtec-multimedia.com">
           <td>
             <a href="https://goldtec-multimedia.com" target="_blank" rel="noopener" title="https://goldtec-multimedia.com">goldtec-multimedia.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">2451 ms</td>
+          <td class="nowrap">2218 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="hclinic.co.il">
           <td>
             <a href="https://hclinic.co.il" target="_blank" rel="noopener" title="https://hclinic.co.il">hclinic.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">217 ms</td>
+          <td class="nowrap">144 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="bella-bareket.com">
           <td>
             <a href="https://bella-bareket.com/" target="_blank" rel="noopener" title="https://bella-bareket.com/">bella-bareket.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">855 ms</td>
+          <td class="nowrap">888 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="hydrotherapy.co.il">
           <td>
             <a href="https://hydrotherapy.co.il" target="_blank" rel="noopener" title="https://hydrotherapy.co.il">hydrotherapy.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">99 ms</td>
+          <td class="nowrap">150 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="idosela.co.il">
           <td>
             <a href="https://idosela.co.il" target="_blank" rel="noopener" title="https://idosela.co.il">idosela.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">121 ms</td>
+          <td class="nowrap">194 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="imagepoint.co.il">
           <td>
             <a href="https://imagepoint.co.il" target="_blank" rel="noopener" title="https://imagepoint.co.il">imagepoint.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">100 ms</td>
+          <td class="nowrap">279 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="khokhobi.com">
           <td>
             <a href="https://khokhobi.com" target="_blank" rel="noopener" title="https://khokhobi.com">khokhobi.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">120 ms</td>
+          <td class="nowrap">135 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="kippur-center.org">
           <td>
             <a href="https://kippur-center.org" target="_blank" rel="noopener" title="https://kippur-center.org">kippur-center.org</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">783 ms</td>
+          <td class="nowrap">770 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="kookia.co.il">
           <td>
             <a href="https://kookia.co.il" target="_blank" rel="noopener" title="https://kookia.co.il">kookia.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">774 ms</td>
+          <td class="nowrap">917 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="magicguy.co.il">
           <td>
             <a href="https://magicguy.co.il" target="_blank" rel="noopener" title="https://magicguy.co.il">magicguy.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">374 ms</td>
+          <td class="nowrap">126 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="michal-lasry.co.il">
           <td>
             <a href="https://michal-lasry.co.il" target="_blank" rel="noopener" title="https://michal-lasry.co.il">michal-lasry.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">231 ms</td>
+          <td class="nowrap">156 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="mrl.co.il">
           <td>
             <a href="https://mrl.co.il" target="_blank" rel="noopener" title="https://mrl.co.il">mrl.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">133 ms</td>
+          <td class="nowrap">277 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="mtech-fire.com">
           <td>
             <a href="https://mtech-fire.com" target="_blank" rel="noopener" title="https://mtech-fire.com">mtech-fire.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">620 ms</td>
+          <td class="nowrap">875 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="mylawyerinisrael.com">
           <td>
             <a href="https://mylawyerinisrael.com" target="_blank" rel="noopener" title="https://mylawyerinisrael.com">mylawyerinisrael.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">197 ms</td>
+          <td class="nowrap">127 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="mypsy.co.il">
           <td>
             <a href="https://mypsy.co.il" target="_blank" rel="noopener" title="https://mypsy.co.il">mypsy.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">100 ms</td>
+          <td class="nowrap">234 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="nadlanone.co.il">
           <td>
             <a href="https://nadlanone.co.il" target="_blank" rel="noopener" title="https://nadlanone.co.il">nadlanone.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">2600 ms</td>
+          <td class="nowrap">2806 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="nagaya.co.il">
           <td>
             <a href="https://nagaya.co.il" target="_blank" rel="noopener" title="https://nagaya.co.il">nagaya.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">3563 ms</td>
+          <td class="nowrap">3550 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="nezikin-lawoffice.com">
           <td>
             <a href="https://nezikin-lawoffice.com" target="_blank" rel="noopener" title="https://nezikin-lawoffice.com">nezikin-lawoffice.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1283 ms</td>
+          <td class="nowrap">1359 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="nitza-genosar.com">
           <td>
             <a href="https://nitza-genosar.com" target="_blank" rel="noopener" title="https://nitza-genosar.com">nitza-genosar.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">442 ms</td>
+          <td class="nowrap">315 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="noam-sela.co.il">
           <td>
             <a href="https://noam-sela.co.il" target="_blank" rel="noopener" title="https://noam-sela.co.il">noam-sela.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">96 ms</td>
+          <td class="nowrap">150 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="noambaby.co.il">
           <td>
             <a href="https://noambaby.co.il" target="_blank" rel="noopener" title="https://noambaby.co.il">noambaby.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">989 ms</td>
+          <td class="nowrap">4236 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="oldschool-studio.co.il">
           <td>
             <a href="https://oldschool-studio.co.il" target="_blank" rel="noopener" title="https://oldschool-studio.co.il">oldschool-studio.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">234 ms</td>
+          <td class="nowrap">153 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="ori-sela.com">
           <td>
             <a href="https://ori-sela.com" target="_blank" rel="noopener" title="https://ori-sela.com">ori-sela.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">82 ms</td>
+          <td class="nowrap">216 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="over-si.com">
           <td>
             <a href="https://over-si.com" target="_blank" rel="noopener" title="https://over-si.com">over-si.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">174 ms</td>
+          <td class="nowrap">138 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="poligem.com">
           <td>
             <a href="https://poligem.com" target="_blank" rel="noopener" title="https://poligem.com">poligem.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">850 ms</td>
+          <td class="nowrap">1800 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="primitiveanddesign.com">
           <td>
             <a href="https://primitiveanddesign.com" target="_blank" rel="noopener" title="https://primitiveanddesign.com">primitiveanddesign.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">113 ms</td>
+          <td class="nowrap">263 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="quest-testing.com">
           <td>
             <a href="https://quest-testing.com" target="_blank" rel="noopener" title="https://quest-testing.com">quest-testing.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">488 ms</td>
+          <td class="nowrap">881 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="samer-jabir.co.il">
           <td>
             <a href="https://samer-jabir.co.il" target="_blank" rel="noopener" title="https://samer-jabir.co.il">samer-jabir.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">102 ms</td>
+          <td class="nowrap">117 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="saralesela.co.il">
           <td>
             <a href="https://saralesela.co.il" target="_blank" rel="noopener" title="https://saralesela.co.il">saralesela.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">109 ms</td>
+          <td class="nowrap">156 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="sharbiv.co.il">
           <td>
             <a href="https://sharbiv.co.il" target="_blank" rel="noopener" title="https://sharbiv.co.il">sharbiv.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1124 ms</td>
+          <td class="nowrap">1446 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="sowrite.co.il">
           <td>
             <a href="https://sowrite.co.il" target="_blank" rel="noopener" title="https://sowrite.co.il">sowrite.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1927 ms</td>
+          <td class="nowrap">1815 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="swim-west.com">
           <td>
             <a href="https://swim-west.com" target="_blank" rel="noopener" title="https://swim-west.com">swim-west.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">167 ms</td>
+          <td class="nowrap">140 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="taliagertman.com">
           <td>
             <a href="https://taliagertman.com" target="_blank" rel="noopener" title="https://taliagertman.com">taliagertman.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">103 ms</td>
+          <td class="nowrap">121 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="tonerevivalguitars.com">
           <td>
             <a href="https://tonerevivalguitars.com" target="_blank" rel="noopener" title="https://tonerevivalguitars.com">tonerevivalguitars.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">173 ms</td>
+          <td class="nowrap">146 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="tuk-tuk.me">
           <td>
             <a href="https://tuk-tuk.me" target="_blank" rel="noopener" title="https://tuk-tuk.me">tuk-tuk.me</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">91 ms</td>
+          <td class="nowrap">125 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="urbanature.com">
           <td>
             <a href="https://urbanature.com" target="_blank" rel="noopener" title="https://urbanature.com">urbanature.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">171 ms</td>
+          <td class="nowrap">119 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="veryanna.com">
           <td>
             <a href="https://veryanna.com" target="_blank" rel="noopener" title="https://veryanna.com">veryanna.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">173 ms</td>
+          <td class="nowrap">215 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="waterworld-campus.co.il">
           <td>
             <a href="https://waterworld-campus.co.il" target="_blank" rel="noopener" title="https://waterworld-campus.co.il">waterworld-campus.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">245 ms</td>
+          <td class="nowrap">148 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="we-jazz.co.il">
           <td>
             <a href="https://we-jazz.co.il" target="_blank" rel="noopener" title="https://we-jazz.co.il">we-jazz.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">377 ms</td>
+          <td class="nowrap">120 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="west.co.il">
           <td>
             <a href="https://west.co.il" target="_blank" rel="noopener" title="https://west.co.il">west.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">242 ms</td>
+          <td class="nowrap">285 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="whitecrow.co.il">
           <td>
             <a href="https://whitecrow.co.il" target="_blank" rel="noopener" title="https://whitecrow.co.il">whitecrow.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">664 ms</td>
+          <td class="nowrap">5919 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.amberjack.co.il">
           <td>
             <a href="https://www.amberjack.co.il" target="_blank" rel="noopener" title="https://www.amberjack.co.il">www.amberjack.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">158 ms</td>
+          <td class="nowrap">194 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.bardror.co.il">
           <td>
             <a href="https://www.bardror.co.il" target="_blank" rel="noopener" title="https://www.bardror.co.il">www.bardror.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">240 ms</td>
+          <td class="nowrap">150 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.bel-g.com">
           <td>
             <a href="https://www.bel-g.com" target="_blank" rel="noopener" title="https://www.bel-g.com">www.bel-g.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1141 ms</td>
+          <td class="nowrap">1398 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.biankini.co.il">
           <td>
             <a href="https://www.biankini.co.il" target="_blank" rel="noopener" title="https://www.biankini.co.il">www.biankini.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">252 ms</td>
+          <td class="nowrap">213 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.easydent.co.il">
           <td>
             <a href="https://www.easydent.co.il" target="_blank" rel="noopener" title="https://www.easydent.co.il">www.easydent.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">862 ms</td>
+          <td class="nowrap">1178 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.elite-erp.com">
           <td>
             <a href="https://www.elite-erp.com" target="_blank" rel="noopener" title="https://www.elite-erp.com">www.elite-erp.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">110 ms</td>
+          <td class="nowrap">403 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.ies-medical.com">
           <td>
             <a href="https://www.ies-medical.com" target="_blank" rel="noopener" title="https://www.ies-medical.com">www.ies-medical.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">107 ms</td>
+          <td class="nowrap">460 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.irelandisrael.ie">
           <td>
             <a href="https://www.irelandisrael.ie" target="_blank" rel="noopener" title="https://www.irelandisrael.ie">www.irelandisrael.ie</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">2345 ms</td>
+          <td class="nowrap">2231 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.menuhalaadrepatriation.com">
           <td>
             <a href="https://www.menuhalaadrepatriation.com" target="_blank" rel="noopener" title="https://www.menuhalaadrepatriation.com">www.menuhalaadrepatriation.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">162 ms</td>
+          <td class="nowrap">224 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.physiotherapy.co.il">
           <td>
             <a href="https://www.physiotherapy.co.il" target="_blank" rel="noopener" title="https://www.physiotherapy.co.il">www.physiotherapy.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">203 ms</td>
+          <td class="nowrap">123 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.ronikeren.com">
           <td>
             <a href="https://www.ronikeren.com" target="_blank" rel="noopener" title="https://www.ronikeren.com">www.ronikeren.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">159 ms</td>
+          <td class="nowrap">150 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.sproject.org.il">
           <td>
             <a href="https://www.sproject.org.il" target="_blank" rel="noopener" title="https://www.sproject.org.il">www.sproject.org.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1020 ms</td>
+          <td class="nowrap">1223 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.thermalbeacon.com">
           <td>
             <a href="https://www.thermalbeacon.com" target="_blank" rel="noopener" title="https://www.thermalbeacon.com">www.thermalbeacon.com</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">2543 ms</td>
+          <td class="nowrap">2822 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="www.triathlon.co.il">
           <td>
             <a href="https://www.triathlon.co.il" target="_blank" rel="noopener" title="https://www.triathlon.co.il">www.triathlon.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">452 ms</td>
+          <td class="nowrap">298 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
 <tr data-name="www.yifatzezak.co.il">
           <td>
             <a href="https://www.yifatzezak.co.il" target="_blank" rel="noopener" title="https://www.yifatzezak.co.il">www.yifatzezak.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1775 ms</td>
+          <td class="nowrap">2319 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="yoniron.co.il">
           <td>
             <a href="https://yoniron.co.il" target="_blank" rel="noopener" title="https://yoniron.co.il">yoniron.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">728 ms</td>
+          <td class="nowrap">1994 ms</td>
           <td class="note" title=""></td>
         </tr>
 <tr data-name="mercedesdna.co.il">
           <td>
             <a href="https://mercedesdna.co.il" target="_blank" rel="noopener" title="https://mercedesdna.co.il">mercedesdna.co.il</a>
             <a class="edit-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="https://github.com/omersela-rockit/rockit-uptime-monitor/edit/master/sites.json" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
-          <td class="nowrap">1914 ms</td>
+          <td class="nowrap">1932 ms</td>
           <td class="note" title=""></td>
         </tr></tbody>
     </table></div>
