@@ -55,7 +55,12 @@ async function checkSite(site) {
       timeout: TIMEOUT_MS,
       validateStatus: () => true,
       maxRedirects: 5,
-      headers: { 'User-Agent': 'RockIt-Uptime-Monitor/1.0' },
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
+      },
     });
     statusCode = res.status;
     const bodyLower = typeof res.data === 'string' ? res.data.toLowerCase() : '';
@@ -65,7 +70,10 @@ async function checkSite(site) {
 
     if (statusCode < 200 || statusCode > 299) {
       status = 'down';
-      error = `Unexpected status code ${statusCode}`;
+      error =
+        statusCode === 403
+          ? `HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down`
+          : `Unexpected status code ${statusCode}`;
     } else if (!keywordOk) {
       status = 'down';
       error = `Expected keyword "${site.keyword}" not found on page`;

@@ -40,7 +40,12 @@ async function checkSite(site) {
       timeout: site.timeout_ms || 15000,
       validateStatus: () => true,
       maxRedirects: 5,
-      headers: { 'User-Agent': 'RockIt-Uptime-Monitor/1.0' },
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
+      },
     });
     statusCode = res.status;
     const inRange = statusCode >= site.expected_status_min && statusCode <= site.expected_status_max;
