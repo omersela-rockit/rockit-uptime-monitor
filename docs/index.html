@@ -10,14 +10,16 @@ body{margin:0;background:radial-gradient(900px 500px at 12% -10%,#1b1040 0%,tran
 header{display:flex;align-items:center;gap:12px;padding:20px 28px;border-bottom:1px solid var(--border)}
 header .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -4px rgba(99,102,241,.6)}
 h1{font-size:17px;margin:0;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-main{max-width:1100px;margin:0 auto;padding:28px}
+main{max-width:900px;margin:0 auto;padding:28px}
 .summary{display:flex;gap:14px;margin-bottom:22px}
 .stat{flex:1;background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;transition:border-color .15s ease,transform .15s ease}
 .stat:hover{border-color:var(--accent-2);transform:translateY(-1px)}
 .stat .label{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .stat .value{font-size:24px;font-weight:700;margin-top:4px}
-main{max-width:900px}
-.updated{color:var(--muted-2,#5d6472);font-size:12px;margin:-14px 0 18px}
+.updated{color:var(--muted-2,#5d6472);font-size:12px;margin:-14px 0 10px}
+.search{width:100%;padding:11px 14px;margin:0 0 18px;background:var(--panel);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:inherit;box-sizing:border-box}
+.search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,102,241,.22)}
+.hidden{display:none!important}
 .columns{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
 .col{flex:1 1 300px;min-width:0;max-width:100%;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-margin-top:20px}
 .col.down-col{order:1;border-top:2px solid var(--down)}
@@ -48,40 +50,42 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
   <button class="stat" onclick="document.getElementById('up-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Up</div><div class="value" style="color:var(--up)">84</div></button>
   <button class="stat" onclick="document.getElementById('down-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Down</div><div class="value" style="color:var(--down)">6</div></button>
 </div>
-<p class="updated">Last checked: 22/07/2026, 11:33:13 UTC · updates hourly</p>
+<p class="updated">Last checked: 22/07/2026, 11:36:13 UTC · updates hourly</p>
+<input type="search" id="searchBox" class="search" placeholder="🔎 Search a site by name…" oninput="filterSites(this.value)" />
+<p id="searchEmpty" class="hidden" style="color:var(--muted);font-size:13px;margin:-10px 0 16px">No sites match "<span id="searchEmptyTerm"></span>"</p>
 <div class="columns">
   <div class="col down-col" id="down-col">
     <h2>🔴 Down (6)</h2>
     <div class="col-scroll"><table>
       <thead><tr><th>Name</th><th>Resp.</th><th>Notes</th></tr></thead>
-      <tbody><tr>
+      <tbody><tr data-name="judaica-n-more.com">
           <td><a href="https://judaica-n-more.com" target="_blank" rel="noopener" title="https://judaica-n-more.com">judaica-n-more.com</a></td>
-          <td class="nowrap">99 ms</td>
+          <td class="nowrap">119 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND judaica-n-more.com">getaddrinfo ENOTFOUND judaica-n-more.com</td>
         </tr>
-<tr>
+<tr data-name="re-live.co.il">
           <td><a href="https://re-live.co.il" target="_blank" rel="noopener" title="https://re-live.co.il">re-live.co.il</a></td>
-          <td class="nowrap">166 ms</td>
+          <td class="nowrap">212 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND re-live.co.il">getaddrinfo ENOTFOUND re-live.co.il</td>
         </tr>
-<tr>
+<tr data-name="tkinsoles.com">
           <td><a href="https://tkinsoles.com" target="_blank" rel="noopener" title="https://tkinsoles.com">tkinsoles.com</a></td>
-          <td class="nowrap">422 ms</td>
+          <td class="nowrap">735 ms</td>
           <td class="note" title="certificate has expired">certificate has expired</td>
         </tr>
-<tr>
+<tr data-name="urirapoport.com">
           <td><a href="https://urirapoport.com" target="_blank" rel="noopener" title="https://urirapoport.com">urirapoport.com</a></td>
-          <td class="nowrap">423 ms</td>
+          <td class="nowrap">536 ms</td>
           <td class="note" title="Hostname/IP does not match certificate&#39;s altnames: Host: urirapoport.com. is not in the cert&#39;s altnames: DNS:www.urirapoport.com">Hostname/IP does not match certificate&#39;s altnames: Host: urirapoport.com. is not in the cert&#39;s altnames: DNS:www.urirapoport.com</td>
         </tr>
-<tr>
+<tr data-name="weizmann.go-swimming.co.il">
           <td><a href="https://weizmann.go-swimming.co.il" target="_blank" rel="noopener" title="https://weizmann.go-swimming.co.il">weizmann.go-swimming.co.il</a></td>
-          <td class="nowrap">59 ms</td>
+          <td class="nowrap">424 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND weizmann.go-swimming.co.il">getaddrinfo ENOTFOUND weizmann.go-swimming.co.il</td>
         </tr>
-<tr>
+<tr data-name="www.winnergy.org.il">
           <td><a href="https://www.winnergy.org.il" target="_blank" rel="noopener" title="https://www.winnergy.org.il">www.winnergy.org.il</a></td>
-          <td class="nowrap">167 ms</td>
+          <td class="nowrap">62 ms</td>
           <td class="note" title="getaddrinfo ENOTFOUND www.winnergy.org.il">getaddrinfo ENOTFOUND www.winnergy.org.il</td>
         </tr></tbody>
     </table></div>
@@ -90,424 +94,424 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
     <h2>🟢 Up (84)</h2>
     <div class="col-scroll"><table>
       <thead><tr><th>Name</th><th>Resp.</th><th>Notes</th></tr></thead>
-      <tbody><tr>
+      <tbody><tr data-name="2monitor.com">
           <td><a href="https://2monitor.com" target="_blank" rel="noopener" title="https://2monitor.com">2monitor.com</a></td>
-          <td class="nowrap">3117 ms</td>
+          <td class="nowrap">3106 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="militarydvrs.com">
           <td><a href="https://militarydvrs.com" target="_blank" rel="noopener" title="https://militarydvrs.com">militarydvrs.com</a></td>
-          <td class="nowrap">833 ms</td>
+          <td class="nowrap">857 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="goldtec.co.il">
           <td><a href="https://goldtec.co.il" target="_blank" rel="noopener" title="https://goldtec.co.il">goldtec.co.il</a></td>
-          <td class="nowrap">4135 ms</td>
+          <td class="nowrap">4391 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="goldtecsys.com">
           <td><a href="https://goldtecsys.com" target="_blank" rel="noopener" title="https://goldtecsys.com">goldtecsys.com</a></td>
-          <td class="nowrap">2658 ms</td>
+          <td class="nowrap">2694 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="adh-law.co.il">
           <td><a href="https://adh-law.co.il" target="_blank" rel="noopener" title="https://adh-law.co.il">adh-law.co.il</a></td>
-          <td class="nowrap">973 ms</td>
+          <td class="nowrap">1449 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="aleia-hai.co.il">
           <td><a href="https://aleia-hai.co.il" target="_blank" rel="noopener" title="https://aleia-hai.co.il">aleia-hai.co.il</a></td>
-          <td class="nowrap">469 ms</td>
+          <td class="nowrap">724 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="alhagova.co.il">
           <td><a href="https://alhagova.co.il" target="_blank" rel="noopener" title="https://alhagova.co.il">alhagova.co.il</a></td>
-          <td class="nowrap">30 ms</td>
+          <td class="nowrap">228 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="alin-beitnoam.org.il">
           <td><a href="https://alin-beitnoam.org.il" target="_blank" rel="noopener" title="https://alin-beitnoam.org.il">alin-beitnoam.org.il</a></td>
-          <td class="nowrap">1099 ms</td>
+          <td class="nowrap">1336 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="bensela.co.il">
           <td><a href="https://bensela.co.il" target="_blank" rel="noopener" title="https://bensela.co.il">bensela.co.il</a></td>
-          <td class="nowrap">187 ms</td>
+          <td class="nowrap">120 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="bloch-design.com">
           <td><a href="https://bloch-design.com" target="_blank" rel="noopener" title="https://bloch-design.com">bloch-design.com</a></td>
-          <td class="nowrap">125 ms</td>
+          <td class="nowrap">184 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="campus.sydmedicaled.com">
           <td><a href="https://campus.sydmedicaled.com" target="_blank" rel="noopener" title="https://campus.sydmedicaled.com">campus.sydmedicaled.com</a></td>
-          <td class="nowrap">1752 ms</td>
+          <td class="nowrap">1658 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="checknet.ai">
           <td><a href="https://checknet.ai" target="_blank" rel="noopener" title="https://checknet.ai">checknet.ai</a></td>
-          <td class="nowrap">86 ms</td>
+          <td class="nowrap">109 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="colorsway.com">
           <td><a href="https://colorsway.com" target="_blank" rel="noopener" title="https://colorsway.com">colorsway.com</a></td>
-          <td class="nowrap">3941 ms</td>
+          <td class="nowrap">3586 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="corner1992.com">
           <td><a href="https://corner1992.com" target="_blank" rel="noopener" title="https://corner1992.com">corner1992.com</a></td>
-          <td class="nowrap">546 ms</td>
+          <td class="nowrap">3754 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="danielaz.com">
           <td><a href="https://danielaz.com" target="_blank" rel="noopener" title="https://danielaz.com">danielaz.com</a></td>
-          <td class="nowrap">120 ms</td>
+          <td class="nowrap">107 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="davidifergan.co.il">
           <td><a href="https://davidifergan.co.il" target="_blank" rel="noopener" title="https://davidifergan.co.il">davidifergan.co.il</a></td>
-          <td class="nowrap">187 ms</td>
+          <td class="nowrap">118 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="ddi.co.il">
           <td><a href="https://ddi.co.il" target="_blank" rel="noopener" title="https://ddi.co.il">ddi.co.il</a></td>
-          <td class="nowrap">57 ms</td>
+          <td class="nowrap">100 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="deadseaguardians.org">
           <td><a href="https://deadseaguardians.org" target="_blank" rel="noopener" title="https://deadseaguardians.org">deadseaguardians.org</a></td>
-          <td class="nowrap">179 ms</td>
+          <td class="nowrap">213 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="dov-grau.co.il">
           <td><a href="https://dov-grau.co.il" target="_blank" rel="noopener" title="https://dov-grau.co.il">dov-grau.co.il</a></td>
-          <td class="nowrap">737 ms</td>
+          <td class="nowrap">774 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="drabba.co.il">
           <td><a href="https://drabba.co.il" target="_blank" rel="noopener" title="https://drabba.co.il">drabba.co.il</a></td>
-          <td class="nowrap">793 ms</td>
+          <td class="nowrap">994 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="drbenshabat.co.il">
           <td><a href="https://drbenshabat.co.il" target="_blank" rel="noopener" title="https://drbenshabat.co.il">drbenshabat.co.il</a></td>
-          <td class="nowrap">45 ms</td>
+          <td class="nowrap">112 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="ed-softwaresolutions.ae">
           <td><a href="https://ed-softwaresolutions.ae" target="_blank" rel="noopener" title="https://ed-softwaresolutions.ae">ed-softwaresolutions.ae</a></td>
-          <td class="nowrap">451 ms</td>
+          <td class="nowrap">533 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="elina-emanuel.co.il">
           <td><a href="https://elina-emanuel.co.il" target="_blank" rel="noopener" title="https://elina-emanuel.co.il">elina-emanuel.co.il</a></td>
-          <td class="nowrap">937 ms</td>
+          <td class="nowrap">1021 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="frog-lock.com">
           <td><a href="https://frog-lock.com" target="_blank" rel="noopener" title="https://frog-lock.com">frog-lock.com</a></td>
-          <td class="nowrap">671 ms</td>
+          <td class="nowrap">735 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="funtasea-swim.com">
           <td><a href="https://funtasea-swim.com" target="_blank" rel="noopener" title="https://funtasea-swim.com">funtasea-swim.com</a></td>
-          <td class="nowrap">128 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://go-swimming.co.il" target="_blank" rel="noopener" title="https://go-swimming.co.il">go-swimming.co.il</a></td>
-          <td class="nowrap">59 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://goldtec-multimedia.com" target="_blank" rel="noopener" title="https://goldtec-multimedia.com">goldtec-multimedia.com</a></td>
-          <td class="nowrap">1896 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://hclinic.co.il" target="_blank" rel="noopener" title="https://hclinic.co.il">hclinic.co.il</a></td>
-          <td class="nowrap">191 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://bella-bareket.com/" target="_blank" rel="noopener" title="https://bella-bareket.com/">bella-bareket.com</a></td>
-          <td class="nowrap">870 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://hydrotherapy.co.il" target="_blank" rel="noopener" title="https://hydrotherapy.co.il">hydrotherapy.co.il</a></td>
-          <td class="nowrap">188 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://idosela.co.il" target="_blank" rel="noopener" title="https://idosela.co.il">idosela.co.il</a></td>
-          <td class="nowrap">62 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://imagepoint.co.il" target="_blank" rel="noopener" title="https://imagepoint.co.il">imagepoint.co.il</a></td>
-          <td class="nowrap">62 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://khokhobi.com" target="_blank" rel="noopener" title="https://khokhobi.com">khokhobi.com</a></td>
-          <td class="nowrap">171 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://kippur-center.org" target="_blank" rel="noopener" title="https://kippur-center.org">kippur-center.org</a></td>
-          <td class="nowrap">788 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://kookia.co.il" target="_blank" rel="noopener" title="https://kookia.co.il">kookia.co.il</a></td>
-          <td class="nowrap">784 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://magicguy.co.il" target="_blank" rel="noopener" title="https://magicguy.co.il">magicguy.co.il</a></td>
-          <td class="nowrap">113 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://michal-lasry.co.il" target="_blank" rel="noopener" title="https://michal-lasry.co.il">michal-lasry.co.il</a></td>
-          <td class="nowrap">60 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://mrl.co.il" target="_blank" rel="noopener" title="https://mrl.co.il">mrl.co.il</a></td>
-          <td class="nowrap">196 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://mtech-fire.com" target="_blank" rel="noopener" title="https://mtech-fire.com">mtech-fire.com</a></td>
-          <td class="nowrap">582 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://mylawyerinisrael.com" target="_blank" rel="noopener" title="https://mylawyerinisrael.com">mylawyerinisrael.com</a></td>
-          <td class="nowrap">119 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://mypsy.co.il" target="_blank" rel="noopener" title="https://mypsy.co.il">mypsy.co.il</a></td>
-          <td class="nowrap">63 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://nadlanone.co.il" target="_blank" rel="noopener" title="https://nadlanone.co.il">nadlanone.co.il</a></td>
-          <td class="nowrap">2807 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://nagaya.co.il" target="_blank" rel="noopener" title="https://nagaya.co.il">nagaya.co.il</a></td>
-          <td class="nowrap">3614 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://nezikin-lawoffice.com" target="_blank" rel="noopener" title="https://nezikin-lawoffice.com">nezikin-lawoffice.com</a></td>
-          <td class="nowrap">1809 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://nitza-genosar.com" target="_blank" rel="noopener" title="https://nitza-genosar.com">nitza-genosar.com</a></td>
-          <td class="nowrap">260 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://noam-sela.co.il" target="_blank" rel="noopener" title="https://noam-sela.co.il">noam-sela.co.il</a></td>
-          <td class="nowrap">169 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://noambaby.co.il" target="_blank" rel="noopener" title="https://noambaby.co.il">noambaby.co.il</a></td>
-          <td class="nowrap">937 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://oldschool-studio.co.il" target="_blank" rel="noopener" title="https://oldschool-studio.co.il">oldschool-studio.co.il</a></td>
-          <td class="nowrap">186 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://ori-sela.com" target="_blank" rel="noopener" title="https://ori-sela.com">ori-sela.com</a></td>
-          <td class="nowrap">230 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://over-si.com" target="_blank" rel="noopener" title="https://over-si.com">over-si.com</a></td>
-          <td class="nowrap">134 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://poligem.com" target="_blank" rel="noopener" title="https://poligem.com">poligem.com</a></td>
-          <td class="nowrap">800 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://primitiveanddesign.com" target="_blank" rel="noopener" title="https://primitiveanddesign.com">primitiveanddesign.com</a></td>
-          <td class="nowrap">121 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://quest-testing.com" target="_blank" rel="noopener" title="https://quest-testing.com">quest-testing.com</a></td>
-          <td class="nowrap">421 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://samer-jabir.co.il" target="_blank" rel="noopener" title="https://samer-jabir.co.il">samer-jabir.co.il</a></td>
-          <td class="nowrap">181 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://saralesela.co.il" target="_blank" rel="noopener" title="https://saralesela.co.il">saralesela.co.il</a></td>
-          <td class="nowrap">187 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://sharbiv.co.il" target="_blank" rel="noopener" title="https://sharbiv.co.il">sharbiv.co.il</a></td>
-          <td class="nowrap">907 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://sowrite.co.il" target="_blank" rel="noopener" title="https://sowrite.co.il">sowrite.co.il</a></td>
-          <td class="nowrap">2202 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://swim-west.com" target="_blank" rel="noopener" title="https://swim-west.com">swim-west.com</a></td>
-          <td class="nowrap">119 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://taliagertman.com" target="_blank" rel="noopener" title="https://taliagertman.com">taliagertman.com</a></td>
-          <td class="nowrap">124 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://tonerevivalguitars.com" target="_blank" rel="noopener" title="https://tonerevivalguitars.com">tonerevivalguitars.com</a></td>
-          <td class="nowrap">58 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://tuk-tuk.me" target="_blank" rel="noopener" title="https://tuk-tuk.me">tuk-tuk.me</a></td>
-          <td class="nowrap">46 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://urbanature.com" target="_blank" rel="noopener" title="https://urbanature.com">urbanature.com</a></td>
-          <td class="nowrap">125 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://veryanna.com" target="_blank" rel="noopener" title="https://veryanna.com">veryanna.com</a></td>
-          <td class="nowrap">120 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://waterworld-campus.co.il" target="_blank" rel="noopener" title="https://waterworld-campus.co.il">waterworld-campus.co.il</a></td>
-          <td class="nowrap">187 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://we-jazz.co.il" target="_blank" rel="noopener" title="https://we-jazz.co.il">we-jazz.co.il</a></td>
-          <td class="nowrap">170 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://west.co.il" target="_blank" rel="noopener" title="https://west.co.il">west.co.il</a></td>
-          <td class="nowrap">62 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://whitecrow.co.il" target="_blank" rel="noopener" title="https://whitecrow.co.il">whitecrow.co.il</a></td>
-          <td class="nowrap">518 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.amberjack.co.il" target="_blank" rel="noopener" title="https://www.amberjack.co.il">www.amberjack.co.il</a></td>
-          <td class="nowrap">77 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.bardror.co.il" target="_blank" rel="noopener" title="https://www.bardror.co.il">www.bardror.co.il</a></td>
-          <td class="nowrap">50 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.bel-g.com" target="_blank" rel="noopener" title="https://www.bel-g.com">www.bel-g.com</a></td>
-          <td class="nowrap">1104 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.biankini.co.il" target="_blank" rel="noopener" title="https://www.biankini.co.il">www.biankini.co.il</a></td>
-          <td class="nowrap">196 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.easydent.co.il" target="_blank" rel="noopener" title="https://www.easydent.co.il">www.easydent.co.il</a></td>
-          <td class="nowrap">1015 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.elite-erp.com" target="_blank" rel="noopener" title="https://www.elite-erp.com">www.elite-erp.com</a></td>
-          <td class="nowrap">237 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.ies-medical.com" target="_blank" rel="noopener" title="https://www.ies-medical.com">www.ies-medical.com</a></td>
-          <td class="nowrap">120 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.irelandisrael.ie" target="_blank" rel="noopener" title="https://www.irelandisrael.ie">www.irelandisrael.ie</a></td>
-          <td class="nowrap">2361 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.menuhalaadrepatriation.com" target="_blank" rel="noopener" title="https://www.menuhalaadrepatriation.com">www.menuhalaadrepatriation.com</a></td>
-          <td class="nowrap">58 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.physiotherapy.co.il" target="_blank" rel="noopener" title="https://www.physiotherapy.co.il">www.physiotherapy.co.il</a></td>
-          <td class="nowrap">57 ms</td>
-          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
-        </tr>
-<tr>
-          <td><a href="https://www.ronikeren.com" target="_blank" rel="noopener" title="https://www.ronikeren.com">www.ronikeren.com</a></td>
           <td class="nowrap">132 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
-          <td><a href="https://www.sproject.org.il" target="_blank" rel="noopener" title="https://www.sproject.org.il">www.sproject.org.il</a></td>
-          <td class="nowrap">803 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.thermalbeacon.com" target="_blank" rel="noopener" title="https://www.thermalbeacon.com">www.thermalbeacon.com</a></td>
-          <td class="nowrap">2578 ms</td>
-          <td class="note" title=""></td>
-        </tr>
-<tr>
-          <td><a href="https://www.triathlon.co.il" target="_blank" rel="noopener" title="https://www.triathlon.co.il">www.triathlon.co.il</a></td>
-          <td class="nowrap">183 ms</td>
+<tr data-name="go-swimming.co.il">
+          <td><a href="https://go-swimming.co.il" target="_blank" rel="noopener" title="https://go-swimming.co.il">go-swimming.co.il</a></td>
+          <td class="nowrap">254 ms</td>
           <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
         </tr>
-<tr>
+<tr data-name="goldtec-multimedia.com">
+          <td><a href="https://goldtec-multimedia.com" target="_blank" rel="noopener" title="https://goldtec-multimedia.com">goldtec-multimedia.com</a></td>
+          <td class="nowrap">2277 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="hclinic.co.il">
+          <td><a href="https://hclinic.co.il" target="_blank" rel="noopener" title="https://hclinic.co.il">hclinic.co.il</a></td>
+          <td class="nowrap">114 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="bella-bareket.com">
+          <td><a href="https://bella-bareket.com/" target="_blank" rel="noopener" title="https://bella-bareket.com/">bella-bareket.com</a></td>
+          <td class="nowrap">796 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="hydrotherapy.co.il">
+          <td><a href="https://hydrotherapy.co.il" target="_blank" rel="noopener" title="https://hydrotherapy.co.il">hydrotherapy.co.il</a></td>
+          <td class="nowrap">247 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="idosela.co.il">
+          <td><a href="https://idosela.co.il" target="_blank" rel="noopener" title="https://idosela.co.il">idosela.co.il</a></td>
+          <td class="nowrap">142 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="imagepoint.co.il">
+          <td><a href="https://imagepoint.co.il" target="_blank" rel="noopener" title="https://imagepoint.co.il">imagepoint.co.il</a></td>
+          <td class="nowrap">103 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="khokhobi.com">
+          <td><a href="https://khokhobi.com" target="_blank" rel="noopener" title="https://khokhobi.com">khokhobi.com</a></td>
+          <td class="nowrap">177 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="kippur-center.org">
+          <td><a href="https://kippur-center.org" target="_blank" rel="noopener" title="https://kippur-center.org">kippur-center.org</a></td>
+          <td class="nowrap">756 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="kookia.co.il">
+          <td><a href="https://kookia.co.il" target="_blank" rel="noopener" title="https://kookia.co.il">kookia.co.il</a></td>
+          <td class="nowrap">2004 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="magicguy.co.il">
+          <td><a href="https://magicguy.co.il" target="_blank" rel="noopener" title="https://magicguy.co.il">magicguy.co.il</a></td>
+          <td class="nowrap">157 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="michal-lasry.co.il">
+          <td><a href="https://michal-lasry.co.il" target="_blank" rel="noopener" title="https://michal-lasry.co.il">michal-lasry.co.il</a></td>
+          <td class="nowrap">140 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="mrl.co.il">
+          <td><a href="https://mrl.co.il" target="_blank" rel="noopener" title="https://mrl.co.il">mrl.co.il</a></td>
+          <td class="nowrap">312 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="mtech-fire.com">
+          <td><a href="https://mtech-fire.com" target="_blank" rel="noopener" title="https://mtech-fire.com">mtech-fire.com</a></td>
+          <td class="nowrap">750 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="mylawyerinisrael.com">
+          <td><a href="https://mylawyerinisrael.com" target="_blank" rel="noopener" title="https://mylawyerinisrael.com">mylawyerinisrael.com</a></td>
+          <td class="nowrap">201 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="mypsy.co.il">
+          <td><a href="https://mypsy.co.il" target="_blank" rel="noopener" title="https://mypsy.co.il">mypsy.co.il</a></td>
+          <td class="nowrap">101 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="nadlanone.co.il">
+          <td><a href="https://nadlanone.co.il" target="_blank" rel="noopener" title="https://nadlanone.co.il">nadlanone.co.il</a></td>
+          <td class="nowrap">2727 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="nagaya.co.il">
+          <td><a href="https://nagaya.co.il" target="_blank" rel="noopener" title="https://nagaya.co.il">nagaya.co.il</a></td>
+          <td class="nowrap">3659 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="nezikin-lawoffice.com">
+          <td><a href="https://nezikin-lawoffice.com" target="_blank" rel="noopener" title="https://nezikin-lawoffice.com">nezikin-lawoffice.com</a></td>
+          <td class="nowrap">1475 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="nitza-genosar.com">
+          <td><a href="https://nitza-genosar.com" target="_blank" rel="noopener" title="https://nitza-genosar.com">nitza-genosar.com</a></td>
+          <td class="nowrap">104 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="noam-sela.co.il">
+          <td><a href="https://noam-sela.co.il" target="_blank" rel="noopener" title="https://noam-sela.co.il">noam-sela.co.il</a></td>
+          <td class="nowrap">108 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="noambaby.co.il">
+          <td><a href="https://noambaby.co.il" target="_blank" rel="noopener" title="https://noambaby.co.il">noambaby.co.il</a></td>
+          <td class="nowrap">3149 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="oldschool-studio.co.il">
+          <td><a href="https://oldschool-studio.co.il" target="_blank" rel="noopener" title="https://oldschool-studio.co.il">oldschool-studio.co.il</a></td>
+          <td class="nowrap">259 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="ori-sela.com">
+          <td><a href="https://ori-sela.com" target="_blank" rel="noopener" title="https://ori-sela.com">ori-sela.com</a></td>
+          <td class="nowrap">181 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="over-si.com">
+          <td><a href="https://over-si.com" target="_blank" rel="noopener" title="https://over-si.com">over-si.com</a></td>
+          <td class="nowrap">111 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="poligem.com">
+          <td><a href="https://poligem.com" target="_blank" rel="noopener" title="https://poligem.com">poligem.com</a></td>
+          <td class="nowrap">2123 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="primitiveanddesign.com">
+          <td><a href="https://primitiveanddesign.com" target="_blank" rel="noopener" title="https://primitiveanddesign.com">primitiveanddesign.com</a></td>
+          <td class="nowrap">148 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="quest-testing.com">
+          <td><a href="https://quest-testing.com" target="_blank" rel="noopener" title="https://quest-testing.com">quest-testing.com</a></td>
+          <td class="nowrap">1076 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="samer-jabir.co.il">
+          <td><a href="https://samer-jabir.co.il" target="_blank" rel="noopener" title="https://samer-jabir.co.il">samer-jabir.co.il</a></td>
+          <td class="nowrap">121 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="saralesela.co.il">
+          <td><a href="https://saralesela.co.il" target="_blank" rel="noopener" title="https://saralesela.co.il">saralesela.co.il</a></td>
+          <td class="nowrap">230 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="sharbiv.co.il">
+          <td><a href="https://sharbiv.co.il" target="_blank" rel="noopener" title="https://sharbiv.co.il">sharbiv.co.il</a></td>
+          <td class="nowrap">1013 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="sowrite.co.il">
+          <td><a href="https://sowrite.co.il" target="_blank" rel="noopener" title="https://sowrite.co.il">sowrite.co.il</a></td>
+          <td class="nowrap">2146 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="swim-west.com">
+          <td><a href="https://swim-west.com" target="_blank" rel="noopener" title="https://swim-west.com">swim-west.com</a></td>
+          <td class="nowrap">111 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="taliagertman.com">
+          <td><a href="https://taliagertman.com" target="_blank" rel="noopener" title="https://taliagertman.com">taliagertman.com</a></td>
+          <td class="nowrap">184 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="tonerevivalguitars.com">
+          <td><a href="https://tonerevivalguitars.com" target="_blank" rel="noopener" title="https://tonerevivalguitars.com">tonerevivalguitars.com</a></td>
+          <td class="nowrap">111 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="tuk-tuk.me">
+          <td><a href="https://tuk-tuk.me" target="_blank" rel="noopener" title="https://tuk-tuk.me">tuk-tuk.me</a></td>
+          <td class="nowrap">233 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="urbanature.com">
+          <td><a href="https://urbanature.com" target="_blank" rel="noopener" title="https://urbanature.com">urbanature.com</a></td>
+          <td class="nowrap">243 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="veryanna.com">
+          <td><a href="https://veryanna.com" target="_blank" rel="noopener" title="https://veryanna.com">veryanna.com</a></td>
+          <td class="nowrap">176 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="waterworld-campus.co.il">
+          <td><a href="https://waterworld-campus.co.il" target="_blank" rel="noopener" title="https://waterworld-campus.co.il">waterworld-campus.co.il</a></td>
+          <td class="nowrap">302 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="we-jazz.co.il">
+          <td><a href="https://we-jazz.co.il" target="_blank" rel="noopener" title="https://we-jazz.co.il">we-jazz.co.il</a></td>
+          <td class="nowrap">492 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="west.co.il">
+          <td><a href="https://west.co.il" target="_blank" rel="noopener" title="https://west.co.il">west.co.il</a></td>
+          <td class="nowrap">427 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="whitecrow.co.il">
+          <td><a href="https://whitecrow.co.il" target="_blank" rel="noopener" title="https://whitecrow.co.il">whitecrow.co.il</a></td>
+          <td class="nowrap">4485 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.amberjack.co.il">
+          <td><a href="https://www.amberjack.co.il" target="_blank" rel="noopener" title="https://www.amberjack.co.il">www.amberjack.co.il</a></td>
+          <td class="nowrap">285 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.bardror.co.il">
+          <td><a href="https://www.bardror.co.il" target="_blank" rel="noopener" title="https://www.bardror.co.il">www.bardror.co.il</a></td>
+          <td class="nowrap">146 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.bel-g.com">
+          <td><a href="https://www.bel-g.com" target="_blank" rel="noopener" title="https://www.bel-g.com">www.bel-g.com</a></td>
+          <td class="nowrap">2421 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.biankini.co.il">
+          <td><a href="https://www.biankini.co.il" target="_blank" rel="noopener" title="https://www.biankini.co.il">www.biankini.co.il</a></td>
+          <td class="nowrap">148 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.easydent.co.il">
+          <td><a href="https://www.easydent.co.il" target="_blank" rel="noopener" title="https://www.easydent.co.il">www.easydent.co.il</a></td>
+          <td class="nowrap">933 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.elite-erp.com">
+          <td><a href="https://www.elite-erp.com" target="_blank" rel="noopener" title="https://www.elite-erp.com">www.elite-erp.com</a></td>
+          <td class="nowrap">393 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.ies-medical.com">
+          <td><a href="https://www.ies-medical.com" target="_blank" rel="noopener" title="https://www.ies-medical.com">www.ies-medical.com</a></td>
+          <td class="nowrap">438 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.irelandisrael.ie">
+          <td><a href="https://www.irelandisrael.ie" target="_blank" rel="noopener" title="https://www.irelandisrael.ie">www.irelandisrael.ie</a></td>
+          <td class="nowrap">2282 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.menuhalaadrepatriation.com">
+          <td><a href="https://www.menuhalaadrepatriation.com" target="_blank" rel="noopener" title="https://www.menuhalaadrepatriation.com">www.menuhalaadrepatriation.com</a></td>
+          <td class="nowrap">153 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.physiotherapy.co.il">
+          <td><a href="https://www.physiotherapy.co.il" target="_blank" rel="noopener" title="https://www.physiotherapy.co.il">www.physiotherapy.co.il</a></td>
+          <td class="nowrap">109 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.ronikeren.com">
+          <td><a href="https://www.ronikeren.com" target="_blank" rel="noopener" title="https://www.ronikeren.com">www.ronikeren.com</a></td>
+          <td class="nowrap">189 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.sproject.org.il">
+          <td><a href="https://www.sproject.org.il" target="_blank" rel="noopener" title="https://www.sproject.org.il">www.sproject.org.il</a></td>
+          <td class="nowrap">1117 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.thermalbeacon.com">
+          <td><a href="https://www.thermalbeacon.com" target="_blank" rel="noopener" title="https://www.thermalbeacon.com">www.thermalbeacon.com</a></td>
+          <td class="nowrap">2648 ms</td>
+          <td class="note" title=""></td>
+        </tr>
+<tr data-name="www.triathlon.co.il">
+          <td><a href="https://www.triathlon.co.il" target="_blank" rel="noopener" title="https://www.triathlon.co.il">www.triathlon.co.il</a></td>
+          <td class="nowrap">188 ms</td>
+          <td class="note" title="HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)">HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+        </tr>
+<tr data-name="www.yifatzezak.co.il">
           <td><a href="https://www.yifatzezak.co.il" target="_blank" rel="noopener" title="https://www.yifatzezak.co.il">www.yifatzezak.co.il</a></td>
-          <td class="nowrap">2289 ms</td>
+          <td class="nowrap">2071 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="yoniron.co.il">
           <td><a href="https://yoniron.co.il" target="_blank" rel="noopener" title="https://yoniron.co.il">yoniron.co.il</a></td>
-          <td class="nowrap">727 ms</td>
+          <td class="nowrap">1650 ms</td>
           <td class="note" title=""></td>
         </tr>
-<tr>
+<tr data-name="mercedesdna.co.il">
           <td><a href="https://mercedesdna.co.il" target="_blank" rel="noopener" title="https://mercedesdna.co.il">mercedesdna.co.il</a></td>
-          <td class="nowrap">2106 ms</td>
+          <td class="nowrap">1680 ms</td>
           <td class="note" title=""></td>
         </tr></tbody>
     </table></div>
@@ -515,4 +519,18 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
 </div>
 </main>
 <footer>Powered by <b>RockIt AI Technologies</b> — checked hourly via GitHub Actions</footer>
+<script>
+function filterSites(query) {
+  const q = query.trim().toLowerCase();
+  const rows = document.querySelectorAll('tr[data-name]');
+  let visibleCount = 0;
+  rows.forEach((row) => {
+    const match = !q || row.dataset.name.includes(q);
+    row.classList.toggle('hidden', !match);
+    if (match) visibleCount++;
+  });
+  document.getElementById('searchEmpty').classList.toggle('hidden', !(q && visibleCount === 0));
+  document.getElementById('searchEmptyTerm').textContent = query;
+}
+</script>
 </body></html>
