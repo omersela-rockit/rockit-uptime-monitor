@@ -1,76 +1,76 @@
 {
-  "lastRunAt": "2026-07-22T16:09:21.819Z",
+  "lastRunAt": "2026-07-22T20:52:07.670Z",
   "sites": {
     "2monitor.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2750,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2917,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "militarydvrs.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1770,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2086,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "goldtec.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3944,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 5041,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "goldtecsys.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2593,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2880,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "adh-law.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1182,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1740,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "aleia-hai.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 657,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 959,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "alhagova.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 72,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 183,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "alin-beitnoam.org.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1018,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1382,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "bensela.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 84,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 153,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "bloch-design.com": {
@@ -78,615 +78,615 @@
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
       "responseTimeMs": 56,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "campus.sydmedicaled.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2452,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3850,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "checknet.ai": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 51,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 183,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "colorsway.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3465,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3878,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "corner1992.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3099,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2593,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "danielaz.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 69,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 80,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "davidifergan.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 67,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 240,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "ddi.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 69,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 253,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "deadseaguardians.org": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 182,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 226,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "dov-grau.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 639,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 994,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "drabba.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 909,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1441,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "drbenshabat.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 50,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 70,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "ed-softwaresolutions.ae": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 453,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 813,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "elina-emanuel.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 998,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1178,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "frog-lock.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 691,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 801,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "funtasea-swim.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 63,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 73,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "go-swimming.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 73,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 104,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "goldtec-multimedia.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1996,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2723,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "hclinic.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 176,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 109,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "bella-bareket.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 763,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1086,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "hydrotherapy.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 68,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 112,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "idosela.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 65,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 47,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "imagepoint.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 72,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 107,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "khokhobi.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 119,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 80,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "kippur-center.org": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 716,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 805,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "kookia.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1542,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1076,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "magicguy.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 74,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 346,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "michal-lasry.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 62,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 169,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "mrl.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 69,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 49,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "mtech-fire.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 662,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 853,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "mylawyerinisrael.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 127,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 110,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "mypsy.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 68,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 115,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "nadlanone.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2511,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3867,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "nagaya.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3519,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 4154,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "nezikin-lawoffice.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 4871,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1556,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "nitza-genosar.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 133,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 160,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "noam-sela.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 79,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 237,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "noambaby.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2899,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3561,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "oldschool-studio.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 70,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 49,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "ori-sela.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 67,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 76,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "over-si.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 124,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 69,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "poligem.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1984,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1956,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "primitiveanddesign.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 124,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 72,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "quest-testing.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 764,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 4045,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "samer-jabir.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 75,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 242,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "saralesela.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 73,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 43,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "sharbiv.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1233,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1446,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "sowrite.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1892,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3032,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "swim-west.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 60,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 49,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "taliagertman.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 126,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 117,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "tonerevivalguitars.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 128,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 108,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "tuk-tuk.me": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 50,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 52,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "urbanature.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 124,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 72,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "urirapoport.com": {
       "status": "down",
       "statusCode": null,
       "error": "Hostname/IP does not match certificate's altnames: Host: urirapoport.com. is not in the cert's altnames: DNS:www.urirapoport.com",
-      "responseTimeMs": 460,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 619,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "veryanna.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 125,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 198,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "waterworld-campus.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 98,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 136,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "we-jazz.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 100,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 268,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "west.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 65,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 229,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "whitecrow.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 4139,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 4582,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.amberjack.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 68,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 94,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.bardror.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 59,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 96,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.bel-g.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2233,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2771,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.biankini.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 108,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 115,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.easydent.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 697,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1082,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.elite-erp.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 194,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 271,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.ies-medical.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 73,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 55,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.irelandisrael.ie": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2398,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2391,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.menuhalaadrepatriation.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 126,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 80,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.physiotherapy.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 63,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 239,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.ronikeren.com": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 122,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 115,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.sproject.org.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 853,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1392,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.thermalbeacon.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2201,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2322,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.triathlon.co.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 82,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 107,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.winnergy.org.il": {
       "status": "up",
       "statusCode": 403,
       "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 57,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 246,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "www.yifatzezak.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1654,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 3134,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "yoniron.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1406,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 1786,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     },
     "mercedesdna.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1548,
-      "lastCheckedAt": "2026-07-22T16:09:21.819Z",
+      "responseTimeMs": 2323,
+      "lastCheckedAt": "2026-07-22T20:52:07.670Z",
       "downSince": null
     }
   }
