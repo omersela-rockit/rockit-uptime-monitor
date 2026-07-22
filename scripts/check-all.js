@@ -156,6 +156,10 @@ async function sendRecoveryAlert(site, downtimeMinutes) {
   );
 }
 
+const GITHUB_REPO = 'omersela-rockit/rockit-uptime-monitor';
+const GITHUB_BRANCH = 'master';
+const SITES_EDIT_URL = `https://github.com/${GITHUB_REPO}/edit/${GITHUB_BRANCH}/sites.json`;
+
 function renderStatusPage(sites, statusMap) {
   function rowsFor(list) {
     return list
@@ -163,7 +167,10 @@ function renderStatusPage(sites, statusMap) {
         const s = statusMap[site.name] || {};
         const note = s.error ? escapeHtml(s.error) : '';
         return `<tr data-name="${escapeHtml(site.name.toLowerCase())}">
-          <td><a href="${site.url}" target="_blank" rel="noopener" title="${site.url}">${site.name}</a></td>
+          <td>
+            <a href="${site.url}" target="_blank" rel="noopener" title="${site.url}">${site.name}</a>
+            <a class="edit-link" href="${SITES_EDIT_URL}" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+          </td>
           <td class="nowrap">${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
           <td class="note" title="${note}">${note}</td>
         </tr>`;
@@ -214,6 +221,10 @@ th:nth-child(2),td:nth-child(2){width:60px}
 th:last-child,td:last-child{width:42%}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#1b1e27;overflow:visible;white-space:normal;word-break:break-word}
+td:first-child{display:flex;align-items:center;gap:6px}
+td:first-child a:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.edit-link{flex-shrink:0;font-weight:400;opacity:.45;text-decoration:none}
+.edit-link:hover{opacity:1;color:var(--accent-2)}
 a{color:var(--text);text-decoration:none;font-weight:600}
 a:hover{color:var(--accent-2)}
 .note{color:var(--muted)}
@@ -222,7 +233,7 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
 @media (max-width:640px){.columns{flex-direction:column}.col{flex-basis:auto;width:100%}}
 </style>
 </head><body>
-<header><div class="mark"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M7 18h4l2.5-8L18 25l2.5-8H25" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h1>Rock It Uptime Monitor</h1></header>
+<header><div class="mark"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M7 18h4l2.5-8L18 25l2.5-8H25" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h1>Rock It Uptime Monitor</h1><a href="${SITES_EDIT_URL}" target="_blank" rel="noopener" style="margin-inline-start:auto;font-size:12.5px;font-weight:600;color:var(--muted)">✎ Edit site list</a></header>
 <main>
 <div class="summary">
   <div class="stat" style="cursor:default"><div class="label">Total sites</div><div class="value">${sites.length}</div></div>
