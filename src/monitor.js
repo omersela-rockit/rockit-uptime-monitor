@@ -56,7 +56,16 @@ async function checkSite(site) {
     const bodyLower = typeof res.data === 'string' ? res.data.toLowerCase() : '';
     const errorSignature = ERROR_SIGNATURES.find((sig) => bodyLower.includes(sig));
 
-    if (!inRange) {
+    // Any HTTP response -- even 401/403/429 -- proves the server is alive and answering.
+    // Those specific codes are access-control decisions (WAF/rate-limit), not outages.
+    const isAccessDenied = [401, 403, 429].includes(statusCode);
+
+    if (statusCode >= 500) {
+      status = 'down';
+      errorMessage = `Server error ${statusCode}`;
+    } else if (isAccessDenied) {
+      errorMessage = `HTTP ${statusCode} (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)`;
+    } else if (!inRange) {
       status = 'down';
       errorMessage = `Unexpected status code ${statusCode}`;
     } else if (!keywordOk) {
