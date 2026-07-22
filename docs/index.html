@@ -24,12 +24,10 @@ a:hover{color:var(--text)}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%}
 .dot.up{background:var(--up);box-shadow:0 0 0 4px rgba(52,211,153,.35)}
 .dot.down{background:var(--down);box-shadow:0 0 0 4px rgba(245,103,122,.4)}
-.dot.blocked{background:#f5a623;box-shadow:0 0 0 4px rgba(245,166,35,.35)}
 .dot.unknown{background:var(--muted)}
 .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
 .pill.up{background:rgba(52,211,153,.14);color:var(--up)}
 .pill.down{background:rgba(245,103,122,.14);color:var(--down)}
-.pill.blocked{background:rgba(245,166,35,.16);color:#f5a623}
 .pill.unknown{background:rgba(139,147,167,.14);color:var(--muted)}
 footer{text-align:center;padding:30px;color:#5d6472;font-size:12.5px}
 footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -39,11 +37,9 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
 <main>
 <div class="summary">
   <div class="stat"><div class="label">Total sites</div><div class="value">90</div></div>
-  <div class="stat"><div class="label">Up</div><div class="value" style="color:var(--up)">36</div></div>
-  <div class="stat"><div class="label">Down</div><div class="value" style="color:var(--down)">6</div></div>
-  <div class="stat"><div class="label">Blocked (inconclusive)</div><div class="value" style="color:#f5a623">48</div></div>
+  <div class="stat"><div class="label">Up</div><div class="value" style="color:var(--up)">83</div></div>
+  <div class="stat"><div class="label">Down</div><div class="value" style="color:var(--down)">7</div></div>
 </div>
-<p style="color:var(--muted);font-size:12.5px;margin:-8px 0 20px">"Blocked" sites returned HTTP 403 to this checker — usually a firewall (Cloudflare/WAF) rejecting automated/cloud traffic, not necessarily a real outage. Verify manually in a normal browser, or whitelist this checker's IP if you manage that site's firewall.</p>
 <table>
 <thead><tr><th></th><th>Name</th><th>URL</th><th>Status</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
 <tbody>
@@ -52,8 +48,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>2monitor.com</td>
         <td><a href="https://2monitor.com" target="_blank" rel="noopener">https://2monitor.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>3090 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2960 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -61,8 +57,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>militarydvrs.com</td>
         <td><a href="https://militarydvrs.com" target="_blank" rel="noopener">https://militarydvrs.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>868 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>866 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -70,8 +66,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>goldtec.co.il</td>
         <td><a href="https://goldtec.co.il" target="_blank" rel="noopener">https://goldtec.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>3887 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>4887 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -79,8 +75,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>goldtecsys.com</td>
         <td><a href="https://goldtecsys.com" target="_blank" rel="noopener">https://goldtecsys.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>2681 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2586 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -88,80 +84,80 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>adh-law.co.il</td>
         <td><a href="https://adh-law.co.il" target="_blank" rel="noopener">https://adh-law.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1176 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1187 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>aleia-hai.co.il</td>
         <td><a href="https://aleia-hai.co.il" target="_blank" rel="noopener">https://aleia-hai.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>517 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>625 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>alhagova.co.il</td>
         <td><a href="https://alhagova.co.il" target="_blank" rel="noopener">https://alhagova.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>114 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>120 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>alin-beitnoam.org.il</td>
         <td><a href="https://alin-beitnoam.org.il" target="_blank" rel="noopener">https://alin-beitnoam.org.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1146 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>935 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>bensela.co.il</td>
         <td><a href="https://bensela.co.il" target="_blank" rel="noopener">https://bensela.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>251 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>58 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>bloch-design.com</td>
         <td><a href="https://bloch-design.com" target="_blank" rel="noopener">https://bloch-design.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>173 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>106 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>campus.sydmedicaled.com</td>
         <td><a href="https://campus.sydmedicaled.com" target="_blank" rel="noopener">https://campus.sydmedicaled.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1857 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2669 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>checknet.ai</td>
         <td><a href="https://checknet.ai" target="_blank" rel="noopener">https://checknet.ai</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>257 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>150 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>colorsway.com</td>
         <td><a href="https://colorsway.com" target="_blank" rel="noopener">https://colorsway.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>866 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>4543 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -169,53 +165,53 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>corner1992.com</td>
         <td><a href="https://corner1992.com" target="_blank" rel="noopener">https://corner1992.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>531 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>736 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>danielaz.com</td>
         <td><a href="https://danielaz.com" target="_blank" rel="noopener">https://danielaz.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>169 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>57 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>davidifergan.co.il</td>
         <td><a href="https://davidifergan.co.il" target="_blank" rel="noopener">https://davidifergan.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>104 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>123 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>ddi.co.il</td>
         <td><a href="https://ddi.co.il" target="_blank" rel="noopener">https://ddi.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>118 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>60 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>deadseaguardians.org</td>
         <td><a href="https://deadseaguardians.org" target="_blank" rel="noopener">https://deadseaguardians.org</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>233 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>154 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>dov-grau.co.il</td>
         <td><a href="https://dov-grau.co.il" target="_blank" rel="noopener">https://dov-grau.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>789 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>645 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -223,26 +219,26 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>drabba.co.il</td>
         <td><a href="https://drabba.co.il" target="_blank" rel="noopener">https://drabba.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>858 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1014 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>drbenshabat.co.il</td>
         <td><a href="https://drbenshabat.co.il" target="_blank" rel="noopener">https://drbenshabat.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>114 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>165 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>ed-softwaresolutions.ae</td>
         <td><a href="https://ed-softwaresolutions.ae" target="_blank" rel="noopener">https://ed-softwaresolutions.ae</a></td>
         <td><span class="pill up">up</span></td>
-        <td>535 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1701 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -250,8 +246,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>elina-emanuel.co.il</td>
         <td><a href="https://elina-emanuel.co.il" target="_blank" rel="noopener">https://elina-emanuel.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>991 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>887 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -259,107 +255,107 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>frog-lock.com</td>
         <td><a href="https://frog-lock.com" target="_blank" rel="noopener">https://frog-lock.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>662 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>572 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>funtasea-swim.com</td>
         <td><a href="https://funtasea-swim.com" target="_blank" rel="noopener">https://funtasea-swim.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>173 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>104 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>go-swimming.co.il</td>
         <td><a href="https://go-swimming.co.il" target="_blank" rel="noopener">https://go-swimming.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>112 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>67 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>goldtec-multimedia.com</td>
         <td><a href="https://goldtec-multimedia.com" target="_blank" rel="noopener">https://goldtec-multimedia.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1955 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>3950 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>hclinic.co.il</td>
         <td><a href="https://hclinic.co.il" target="_blank" rel="noopener">https://hclinic.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>245 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>59 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>bella-bareket.com</td>
         <td><a href="https://bella-bareket.com/" target="_blank" rel="noopener">https://bella-bareket.com/</a></td>
         <td><span class="pill up">up</span></td>
-        <td>845 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>810 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>hydrotherapy.co.il</td>
         <td><a href="https://hydrotherapy.co.il" target="_blank" rel="noopener">https://hydrotherapy.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>117 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>55 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>idosela.co.il</td>
         <td><a href="https://idosela.co.il" target="_blank" rel="noopener">https://idosela.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>118 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>168 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>imagepoint.co.il</td>
         <td><a href="https://imagepoint.co.il" target="_blank" rel="noopener">https://imagepoint.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>105 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>82 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot down"></span></td>
         <td>judaica-n-more.com</td>
         <td><a href="https://judaica-n-more.com" target="_blank" rel="noopener">https://judaica-n-more.com</a></td>
         <td><span class="pill down">down</span></td>
-        <td>58 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>14 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>getaddrinfo ENOTFOUND judaica-n-more.com</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>khokhobi.com</td>
         <td><a href="https://khokhobi.com" target="_blank" rel="noopener">https://khokhobi.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>187 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>61 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>kippur-center.org</td>
         <td><a href="https://kippur-center.org" target="_blank" rel="noopener">https://kippur-center.org</a></td>
         <td><span class="pill up">up</span></td>
-        <td>809 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>564 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -367,71 +363,71 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>kookia.co.il</td>
         <td><a href="https://kookia.co.il" target="_blank" rel="noopener">https://kookia.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>749 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>532 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>magicguy.co.il</td>
         <td><a href="https://magicguy.co.il" target="_blank" rel="noopener">https://magicguy.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>160 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>56 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>michal-lasry.co.il</td>
         <td><a href="https://michal-lasry.co.il" target="_blank" rel="noopener">https://michal-lasry.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>292 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>65 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>mrl.co.il</td>
         <td><a href="https://mrl.co.il" target="_blank" rel="noopener">https://mrl.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>200 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>173 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>mtech-fire.com</td>
         <td><a href="https://mtech-fire.com" target="_blank" rel="noopener">https://mtech-fire.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>591 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>516 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>mylawyerinisrael.com</td>
         <td><a href="https://mylawyerinisrael.com" target="_blank" rel="noopener">https://mylawyerinisrael.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>167 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>101 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>mypsy.co.il</td>
         <td><a href="https://mypsy.co.il" target="_blank" rel="noopener">https://mypsy.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>343 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>131 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>nadlanone.co.il</td>
         <td><a href="https://nadlanone.co.il" target="_blank" rel="noopener">https://nadlanone.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>2913 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2804 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -439,8 +435,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>nagaya.co.il</td>
         <td><a href="https://nagaya.co.il" target="_blank" rel="noopener">https://nagaya.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>3454 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>3587 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -448,89 +444,89 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>nezikin-lawoffice.com</td>
         <td><a href="https://nezikin-lawoffice.com" target="_blank" rel="noopener">https://nezikin-lawoffice.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1201 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1511 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>nitza-genosar.com</td>
         <td><a href="https://nitza-genosar.com" target="_blank" rel="noopener">https://nitza-genosar.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>172 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>125 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>noam-sela.co.il</td>
         <td><a href="https://noam-sela.co.il" target="_blank" rel="noopener">https://noam-sela.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>115 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>61 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>noambaby.co.il</td>
         <td><a href="https://noambaby.co.il" target="_blank" rel="noopener">https://noambaby.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>888 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>739 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>oldschool-studio.co.il</td>
         <td><a href="https://oldschool-studio.co.il" target="_blank" rel="noopener">https://oldschool-studio.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>112 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>39 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>ori-sela.com</td>
         <td><a href="https://ori-sela.com" target="_blank" rel="noopener">https://ori-sela.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>110 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>111 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>over-si.com</td>
         <td><a href="https://over-si.com" target="_blank" rel="noopener">https://over-si.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>187 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>55 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>poligem.com</td>
         <td><a href="https://poligem.com" target="_blank" rel="noopener">https://poligem.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>852 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>710 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>primitiveanddesign.com</td>
         <td><a href="https://primitiveanddesign.com" target="_blank" rel="noopener">https://primitiveanddesign.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>184 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>54 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>quest-testing.com</td>
         <td><a href="https://quest-testing.com" target="_blank" rel="noopener">https://quest-testing.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>489 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>309 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -538,35 +534,35 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>re-live.co.il</td>
         <td><a href="https://re-live.co.il" target="_blank" rel="noopener">https://re-live.co.il</a></td>
         <td><span class="pill down">down</span></td>
-        <td>47 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>37 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>getaddrinfo ENOTFOUND re-live.co.il</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>samer-jabir.co.il</td>
         <td><a href="https://samer-jabir.co.il" target="_blank" rel="noopener">https://samer-jabir.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>114 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>52 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>saralesela.co.il</td>
         <td><a href="https://saralesela.co.il" target="_blank" rel="noopener">https://saralesela.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>100 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>177 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>sharbiv.co.il</td>
         <td><a href="https://sharbiv.co.il" target="_blank" rel="noopener">https://sharbiv.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>984 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>998 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -574,233 +570,233 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>sowrite.co.il</td>
         <td><a href="https://sowrite.co.il" target="_blank" rel="noopener">https://sowrite.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1887 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1914 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>swim-west.com</td>
         <td><a href="https://swim-west.com" target="_blank" rel="noopener">https://swim-west.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>105 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>280 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>taliagertman.com</td>
         <td><a href="https://taliagertman.com" target="_blank" rel="noopener">https://taliagertman.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>177 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>108 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot down"></span></td>
         <td>tkinsoles.com</td>
         <td><a href="https://tkinsoles.com" target="_blank" rel="noopener">https://tkinsoles.com</a></td>
         <td><span class="pill down">down</span></td>
-        <td>380 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>484 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>certificate has expired</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>tonerevivalguitars.com</td>
         <td><a href="https://tonerevivalguitars.com" target="_blank" rel="noopener">https://tonerevivalguitars.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>105 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>29 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>tuk-tuk.me</td>
         <td><a href="https://tuk-tuk.me" target="_blank" rel="noopener">https://tuk-tuk.me</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>198 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>43 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>urbanature.com</td>
         <td><a href="https://urbanature.com" target="_blank" rel="noopener">https://urbanature.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>183 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>117 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot down"></span></td>
         <td>urirapoport.com</td>
         <td><a href="https://urirapoport.com" target="_blank" rel="noopener">https://urirapoport.com</a></td>
         <td><span class="pill down">down</span></td>
-        <td>447 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>463 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>Hostname/IP does not match certificate&#39;s altnames: Host: urirapoport.com. is not in the cert&#39;s altnames: DNS:www.urirapoport.com</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>veryanna.com</td>
         <td><a href="https://veryanna.com" target="_blank" rel="noopener">https://veryanna.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>187 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>163 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>waterworld-campus.co.il</td>
         <td><a href="https://waterworld-campus.co.il" target="_blank" rel="noopener">https://waterworld-campus.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>101 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>106 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>we-jazz.co.il</td>
         <td><a href="https://we-jazz.co.il" target="_blank" rel="noopener">https://we-jazz.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>130 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>96 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot down"></span></td>
         <td>weizmann.go-swimming.co.il</td>
         <td><a href="https://weizmann.go-swimming.co.il" target="_blank" rel="noopener">https://weizmann.go-swimming.co.il</a></td>
         <td><span class="pill down">down</span></td>
-        <td>67 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>106 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>getaddrinfo ENOTFOUND weizmann.go-swimming.co.il</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>west.co.il</td>
         <td><a href="https://west.co.il" target="_blank" rel="noopener">https://west.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>239 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>119 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
+      </tr>
+<tr>
+        <td><span class="dot down"></span></td>
+        <td>whitecrow.co.il</td>
+        <td><a href="https://whitecrow.co.il" target="_blank" rel="noopener">https://whitecrow.co.il</a></td>
+        <td><span class="pill down">down</span></td>
+        <td>15002 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>Request timed out</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
-        <td>whitecrow.co.il</td>
-        <td><a href="https://whitecrow.co.il" target="_blank" rel="noopener">https://whitecrow.co.il</a></td>
-        <td><span class="pill up">up</span></td>
-        <td>539 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td></td>
-      </tr>
-<tr>
-        <td><span class="dot blocked"></span></td>
         <td>www.amberjack.co.il</td>
         <td><a href="https://www.amberjack.co.il" target="_blank" rel="noopener">https://www.amberjack.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>293 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>178 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.bardror.co.il</td>
         <td><a href="https://www.bardror.co.il" target="_blank" rel="noopener">https://www.bardror.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>4580 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>63 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>www.bel-g.com</td>
         <td><a href="https://www.bel-g.com" target="_blank" rel="noopener">https://www.bel-g.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1132 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>1133 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.biankini.co.il</td>
         <td><a href="https://www.biankini.co.il" target="_blank" rel="noopener">https://www.biankini.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>332 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>64 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>www.easydent.co.il</td>
         <td><a href="https://www.easydent.co.il" target="_blank" rel="noopener">https://www.easydent.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>871 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>700 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.elite-erp.com</td>
         <td><a href="https://www.elite-erp.com" target="_blank" rel="noopener">https://www.elite-erp.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>246 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>188 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.ies-medical.com</td>
         <td><a href="https://www.ies-medical.com" target="_blank" rel="noopener">https://www.ies-medical.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>229 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>114 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>www.irelandisrael.ie</td>
         <td><a href="https://www.irelandisrael.ie" target="_blank" rel="noopener">https://www.irelandisrael.ie</a></td>
         <td><span class="pill up">up</span></td>
-        <td>2050 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2923 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.menuhalaadrepatriation.com</td>
         <td><a href="https://www.menuhalaadrepatriation.com" target="_blank" rel="noopener">https://www.menuhalaadrepatriation.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>298 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>63 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.physiotherapy.co.il</td>
         <td><a href="https://www.physiotherapy.co.il" target="_blank" rel="noopener">https://www.physiotherapy.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>332 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>57 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.ronikeren.com</td>
         <td><a href="https://www.ronikeren.com" target="_blank" rel="noopener">https://www.ronikeren.com</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>103 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>36 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot up"></span></td>
         <td>www.sproject.org.il</td>
         <td><a href="https://www.sproject.org.il" target="_blank" rel="noopener">https://www.sproject.org.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>980 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>6400 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -808,26 +804,26 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>www.thermalbeacon.com</td>
         <td><a href="https://www.thermalbeacon.com" target="_blank" rel="noopener">https://www.thermalbeacon.com</a></td>
         <td><span class="pill up">up</span></td>
-        <td>3419 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>3344 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
-        <td><span class="dot blocked"></span></td>
+        <td><span class="dot up"></span></td>
         <td>www.triathlon.co.il</td>
         <td><a href="https://www.triathlon.co.il" target="_blank" rel="noopener">https://www.triathlon.co.il</a></td>
-        <td><span class="pill blocked">blocked (403)</span></td>
-        <td>541 ms</td>
-        <td>22/07/2026, 10:47:10</td>
-        <td>HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker&#39;s IP, not necessarily a real outage</td>
+        <td><span class="pill up">up</span></td>
+        <td>147 ms</td>
+        <td>22/07/2026, 11:06:15</td>
+        <td>HTTP 403 (access denied by the site&#39;s own firewall/rate-limit, not an outage -- server is responding)</td>
       </tr>
 <tr>
         <td><span class="dot down"></span></td>
         <td>www.winnergy.org.il</td>
         <td><a href="https://www.winnergy.org.il" target="_blank" rel="noopener">https://www.winnergy.org.il</a></td>
         <td><span class="pill down">down</span></td>
-        <td>528 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>36 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td>getaddrinfo ENOTFOUND www.winnergy.org.il</td>
       </tr>
 <tr>
@@ -835,8 +831,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>www.yifatzezak.co.il</td>
         <td><a href="https://www.yifatzezak.co.il" target="_blank" rel="noopener">https://www.yifatzezak.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>2094 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2294 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -844,8 +840,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>yoniron.co.il</td>
         <td><a href="https://yoniron.co.il" target="_blank" rel="noopener">https://yoniron.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>1422 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>561 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 <tr>
@@ -853,8 +849,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
         <td>mercedesdna.co.il</td>
         <td><a href="https://mercedesdna.co.il" target="_blank" rel="noopener">https://mercedesdna.co.il</a></td>
         <td><span class="pill up">up</span></td>
-        <td>2577 ms</td>
-        <td>22/07/2026, 10:47:10</td>
+        <td>2387 ms</td>
+        <td>22/07/2026, 11:06:15</td>
         <td></td>
       </tr>
 </tbody>
