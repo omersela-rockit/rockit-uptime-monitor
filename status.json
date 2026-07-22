@@ -1,724 +1,724 @@
 {
-  "lastRunAt": "2026-07-22T10:43:33.853Z",
+  "lastRunAt": "2026-07-22T10:47:10.839Z",
   "sites": {
     "2monitor.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3437,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 3090,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "militarydvrs.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 806,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 868,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "goldtec.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 4237,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 3887,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "goldtecsys.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2918,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 2681,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "adh-law.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1188,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1176,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "aleia-hai.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 497,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 517,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "alhagova.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 240,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 114,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "alin-beitnoam.org.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1182,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1146,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "bensela.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 109,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 251,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "bloch-design.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 179,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 173,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "campus.sydmedicaled.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1779,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1857,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "checknet.ai": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 219,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 257,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "colorsway.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 4413,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 866,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "corner1992.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2819,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 531,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "danielaz.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 182,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 169,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "davidifergan.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 108,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 104,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "ddi.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 331,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 118,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "deadseaguardians.org": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 189,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 233,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "dov-grau.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 776,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 789,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "drabba.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 984,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 858,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "drbenshabat.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 105,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 114,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "ed-softwaresolutions.ae": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 495,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 535,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "elina-emanuel.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1146,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 991,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "frog-lock.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 794,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 662,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "funtasea-swim.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 174,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 173,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "go-swimming.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 245,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 112,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "goldtec-multimedia.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2205,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1955,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "hclinic.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 105,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 245,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "bella-bareket.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 775,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 845,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "hydrotherapy.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 203,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 117,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "idosela.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 252,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 118,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "imagepoint.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 112,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 105,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "judaica-n-more.com": {
       "status": "down",
       "statusCode": null,
       "error": "getaddrinfo ENOTFOUND judaica-n-more.com",
-      "responseTimeMs": 119,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 58,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "khokhobi.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 179,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 187,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "kippur-center.org": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 793,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 809,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "kookia.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1663,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 749,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "magicguy.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 235,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 160,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "michal-lasry.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 100,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 292,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "mrl.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 98,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 200,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "mtech-fire.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 699,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 591,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "mylawyerinisrael.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 90,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 167,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "mypsy.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 108,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 343,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "nadlanone.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2694,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 2913,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "nagaya.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3306,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 3454,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "nezikin-lawoffice.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1545,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1201,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "nitza-genosar.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 160,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 172,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "noam-sela.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 107,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 115,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "noambaby.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 3350,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 888,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "oldschool-studio.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 105,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 112,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "ori-sela.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 167,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 110,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "over-si.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 164,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 187,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "poligem.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1400,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 852,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "primitiveanddesign.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 109,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 184,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "quest-testing.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 803,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 489,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "re-live.co.il": {
       "status": "down",
       "statusCode": null,
       "error": "getaddrinfo ENOTFOUND re-live.co.il",
-      "responseTimeMs": 44,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 47,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "samer-jabir.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 226,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 114,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "saralesela.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 91,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 100,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "sharbiv.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 977,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 984,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "sowrite.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2382,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1887,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "swim-west.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 161,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 105,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "taliagertman.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 105,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 177,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "tkinsoles.com": {
       "status": "down",
       "statusCode": null,
       "error": "certificate has expired",
-      "responseTimeMs": 488,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 380,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "tonerevivalguitars.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 186,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 105,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "tuk-tuk.me": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 226,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 198,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "urbanature.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 259,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 183,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "urirapoport.com": {
       "status": "down",
       "statusCode": null,
       "error": "Hostname/IP does not match certificate's altnames: Host: urirapoport.com. is not in the cert's altnames: DNS:www.urirapoport.com",
-      "responseTimeMs": 617,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 447,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "veryanna.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 235,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 187,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "waterworld-campus.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 308,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 101,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "we-jazz.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 387,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 130,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "weizmann.go-swimming.co.il": {
       "status": "down",
       "statusCode": null,
       "error": "getaddrinfo ENOTFOUND weizmann.go-swimming.co.il",
-      "responseTimeMs": 319,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 67,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "west.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 234,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 239,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "whitecrow.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2931,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 539,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.amberjack.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 159,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 293,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.bardror.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 131,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 4580,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.bel-g.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1173,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1132,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.biankini.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 106,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 332,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.easydent.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 827,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 871,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.elite-erp.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 234,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 246,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.ies-medical.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 138,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 229,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.irelandisrael.ie": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2099,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 2050,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.menuhalaadrepatriation.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 109,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 298,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.physiotherapy.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 106,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 332,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.ronikeren.com": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 165,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 103,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.sproject.org.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1053,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 980,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.thermalbeacon.com": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2302,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 3419,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "www.triathlon.co.il": {
-      "status": "down",
+      "status": "blocked",
       "statusCode": 403,
-      "error": "HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down",
-      "responseTimeMs": 152,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
-      "downSince": "2026-07-22T10:38:53.371Z"
+      "error": "HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage",
+      "responseTimeMs": 541,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
+      "downSince": null
     },
     "www.winnergy.org.il": {
       "status": "down",
       "statusCode": null,
       "error": "getaddrinfo ENOTFOUND www.winnergy.org.il",
-      "responseTimeMs": 37,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 528,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": "2026-07-22T10:38:53.371Z"
     },
     "www.yifatzezak.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1431,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 2094,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "yoniron.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 1620,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 1422,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     },
     "mercedesdna.co.il": {
       "status": "up",
       "statusCode": 200,
       "error": null,
-      "responseTimeMs": 2444,
-      "lastCheckedAt": "2026-07-22T10:43:33.853Z",
+      "responseTimeMs": 2577,
+      "lastCheckedAt": "2026-07-22T10:47:10.839Z",
       "downSince": null
     }
   }
