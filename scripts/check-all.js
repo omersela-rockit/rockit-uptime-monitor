@@ -170,6 +170,7 @@ function renderStatusPage(sites, statusMap) {
           <td>
             <a href="${site.url}" target="_blank" rel="noopener" title="${site.url}">${site.name}</a>
             <a class="edit-link" href="${SITES_EDIT_URL}" target="_blank" rel="noopener" title="Edit this site's URL on GitHub">✎</a>
+            <a class="edit-link delete-link" href="${SITES_EDIT_URL}" target="_blank" rel="noopener" title="Remove from monitoring: opens GitHub, delete this site's line, then commit">🗑</a>
           </td>
           <td class="nowrap">${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
           <td class="note" title="${note}">${note}</td>
@@ -225,6 +226,7 @@ td:first-child{display:flex;align-items:center;gap:6px}
 td:first-child a:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .edit-link{flex-shrink:0;font-weight:400;opacity:.45;text-decoration:none}
 .edit-link:hover{opacity:1;color:var(--accent-2)}
+.delete-link:hover{color:var(--down)}
 a{color:var(--text);text-decoration:none;font-weight:600}
 a:hover{color:var(--accent-2)}
 .note{color:var(--muted)}
