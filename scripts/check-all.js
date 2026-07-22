@@ -68,12 +68,15 @@ async function checkSite(site) {
     let keywordOk = true;
     if (site.keyword && typeof res.data === 'string') keywordOk = res.data.includes(site.keyword);
 
-    if (statusCode < 200 || statusCode > 299) {
+    if (statusCode === 403) {
+      // A 403 from a healthy-looking response is usually a WAF/Cloudflare rule blocking this
+      // checker's cloud IP, not the site actually being broken. Track it separately so it
+      // doesn't get reported (or emailed) as a real outage.
+      status = 'blocked';
+      error = `HTTP 403 — likely a firewall (Cloudflare/WAF) blocking this checker's IP, not necessarily a real outage`;
+    } else if (statusCode < 200 || statusCode > 299) {
       status = 'down';
-      error =
-        statusCode === 403
-          ? `HTTP 403 — could be a real block, or a firewall (Cloudflare/WAF) blocking this checker's server IP rather than the site being down`
-          : `Unexpected status code ${statusCode}`;
+      error = `Unexpected status code ${statusCode}`;
     } else if (!keywordOk) {
       status = 'down';
       error = `Expected keyword "${site.keyword}" not found on page`;
@@ -149,8 +152,8 @@ function renderStatusPage(sites, statusMap) {
   const rows = sites
     .map((site) => {
       const s = statusMap[site.name] || {};
-      const dot = s.status === 'up' ? 'up' : s.status === 'down' ? 'down' : 'unknown';
-      const label = s.status || 'unknown';
+      const dot = ['up', 'down', 'blocked'].includes(s.status) ? s.status : 'unknown';
+      const label = s.status === 'blocked' ? 'blocked (403)' : s.status || 'unknown';
       return `<tr>
         <td><span class="dot ${dot}"></span></td>
         <td>${site.name}</td>
@@ -165,6 +168,7 @@ function renderStatusPage(sites, statusMap) {
 
   const upCount = Object.values(statusMap).filter((s) => s.status === 'up').length;
   const downCount = Object.values(statusMap).filter((s) => s.status === 'down').length;
+  const blockedCount = Object.values(statusMap).filter((s) => s.status === 'blocked').length;
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8" />
@@ -192,10 +196,12 @@ a:hover{color:var(--text)}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%}
 .dot.up{background:var(--up);box-shadow:0 0 0 4px rgba(52,211,153,.35)}
 .dot.down{background:var(--down);box-shadow:0 0 0 4px rgba(245,103,122,.4)}
+.dot.blocked{background:#f5a623;box-shadow:0 0 0 4px rgba(245,166,35,.35)}
 .dot.unknown{background:var(--muted)}
 .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
 .pill.up{background:rgba(52,211,153,.14);color:var(--up)}
 .pill.down{background:rgba(245,103,122,.14);color:var(--down)}
+.pill.blocked{background:rgba(245,166,35,.16);color:#f5a623}
 .pill.unknown{background:rgba(139,147,167,.14);color:var(--muted)}
 footer{text-align:center;padding:30px;color:#5d6472;font-size:12.5px}
 footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -207,7 +213,9 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
   <div class="stat"><div class="label">Total sites</div><div class="value">${sites.length}</div></div>
   <div class="stat"><div class="label">Up</div><div class="value" style="color:var(--up)">${upCount}</div></div>
   <div class="stat"><div class="label">Down</div><div class="value" style="color:var(--down)">${downCount}</div></div>
+  <div class="stat"><div class="label">Blocked (inconclusive)</div><div class="value" style="color:#f5a623">${blockedCount}</div></div>
 </div>
+${blockedCount > 0 ? `<p style="color:var(--muted);font-size:12.5px;margin:-8px 0 20px">"Blocked" sites returned HTTP 403 to this checker — usually a firewall (Cloudflare/WAF) rejecting automated/cloud traffic, not necessarily a real outage. Verify manually in a normal browser, or whitelist this checker's IP if you manage that site's firewall.</p>` : ''}
 <table>
 <thead><tr><th></th><th>Name</th><th>URL</th><th>Status</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
 <tbody>
