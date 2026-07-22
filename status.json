@@ -553,14 +553,6 @@
       "lastCheckedAt": "2026-07-22T11:45:06.592Z",
       "downSince": null
     },
-    "weizmann.go-swimming.co.il": {
-      "status": "up",
-      "statusCode": 403,
-      "error": "HTTP 403 (access denied by the site's own firewall/rate-limit, not an outage -- server is responding)",
-      "responseTimeMs": 19,
-      "lastCheckedAt": "2026-07-22T11:45:06.592Z",
-      "downSince": null
-    },
     "west.co.il": {
       "status": "up",
       "statusCode": 403,
