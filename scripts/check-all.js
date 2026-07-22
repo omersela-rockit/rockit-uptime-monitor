@@ -161,12 +161,11 @@ function renderStatusPage(sites, statusMap) {
     return list
       .map((site) => {
         const s = statusMap[site.name] || {};
+        const note = s.error ? escapeHtml(s.error) : '';
         return `<tr>
-          <td>${site.name}</td>
-          <td><a href="${site.url}" target="_blank" rel="noopener">${site.url}</a></td>
-          <td>${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
-          <td>${s.lastCheckedAt ? new Date(s.lastCheckedAt).toLocaleString('en-GB') : '-'}</td>
-          <td>${s.error ? escapeHtml(s.error) : ''}</td>
+          <td><a href="${site.url}" target="_blank" rel="noopener" title="${site.url}">${site.name}</a></td>
+          <td class="nowrap">${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
+          <td class="note" title="${note}">${note}</td>
         </tr>`;
       })
       .join('\n');
@@ -176,6 +175,7 @@ function renderStatusPage(sites, statusMap) {
   const downSites = sites.filter((site) => (statusMap[site.name] || {}).status === 'down');
   const upCount = upSites.length;
   const downCount = downSites.length;
+  const lastRunLabel = new Date().toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8" />
@@ -195,23 +195,29 @@ main{max-width:1100px;margin:0 auto;padding:28px}
 .stat:hover{border-color:var(--accent-2);transform:translateY(-1px)}
 .stat .label{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .stat .value{font-size:24px;font-weight:700;margin-top:4px}
-.columns{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
-.col{flex:1;min-width:340px;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-margin-top:20px}
+main{max-width:900px}
+.updated{color:var(--muted-2,#5d6472);font-size:12px;margin:-14px 0 18px}
+.columns{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.col{flex:1 1 300px;min-width:0;max-width:100%;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-margin-top:20px}
 .col.down-col{order:1;border-top:2px solid var(--down)}
 .col.up-col{order:2;border-top:2px solid var(--up)}
-.col h2{font-size:13px;margin:0;padding:14px 16px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.04em}
+.col h2{font-size:12.5px;margin:0;padding:12px 14px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.04em}
 .col.down-col h2{color:var(--down)}
 .col.up-col h2{color:var(--up)}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
-th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.col-scroll{max-height:520px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+th{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
+th:nth-child(2),td:nth-child(2){width:60px}
+th:last-child,td:last-child{width:42%}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:#1b1e27}
-a{color:var(--muted);text-decoration:none}
-a:hover{color:var(--text)}
+tr:hover td{background:#1b1e27;overflow:visible;white-space:normal;word-break:break-word}
+a{color:var(--text);text-decoration:none;font-weight:600}
+a:hover{color:var(--accent-2)}
+.note{color:var(--muted)}
 footer{text-align:center;padding:30px;color:#5d6472;font-size:12.5px}
 footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-@media (max-width:760px){.col{min-width:100%}}
+@media (max-width:640px){.columns{flex-direction:column}.col{flex-basis:auto;width:100%}}
 </style>
 </head><body>
 <header><div class="mark"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M7 18h4l2.5-8L18 25l2.5-8H25" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h1>Rock It Uptime Monitor</h1></header>
@@ -221,20 +227,21 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
   <button class="stat" onclick="document.getElementById('up-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Up</div><div class="value" style="color:var(--up)">${upCount}</div></button>
   <button class="stat" onclick="document.getElementById('down-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Down</div><div class="value" style="color:var(--down)">${downCount}</div></button>
 </div>
+<p class="updated">Last checked: ${lastRunLabel} · updates hourly</p>
 <div class="columns">
   <div class="col down-col" id="down-col">
     <h2>🔴 Down (${downCount})</h2>
-    <table>
-      <thead><tr><th>Name</th><th>URL</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
-      <tbody>${rowsFor(downSites) || `<tr><td colspan="5" style="color:var(--muted)">Nothing down 🎉</td></tr>`}</tbody>
-    </table>
+    <div class="col-scroll"><table>
+      <thead><tr><th>Name</th><th>Resp.</th><th>Notes</th></tr></thead>
+      <tbody>${rowsFor(downSites) || `<tr><td colspan="3" style="color:var(--muted);white-space:normal">Nothing down 🎉</td></tr>`}</tbody>
+    </table></div>
   </div>
   <div class="col up-col" id="up-col">
     <h2>🟢 Up (${upCount})</h2>
-    <table>
-      <thead><tr><th>Name</th><th>URL</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
+    <div class="col-scroll"><table>
+      <thead><tr><th>Name</th><th>Resp.</th><th>Notes</th></tr></thead>
       <tbody>${rowsFor(upSites)}</tbody>
-    </table>
+    </table></div>
   </div>
 </div>
 </main>
