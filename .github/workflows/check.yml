@@ -47,4 +47,3 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: rockit-status-page
           directory: docs
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
