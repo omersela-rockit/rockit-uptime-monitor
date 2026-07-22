@@ -157,25 +157,25 @@ async function sendRecoveryAlert(site, downtimeMinutes) {
 }
 
 function renderStatusPage(sites, statusMap) {
-  const rows = sites
-    .map((site) => {
-      const s = statusMap[site.name] || {};
-      const dot = ['up', 'down'].includes(s.status) ? s.status : 'unknown';
-      const label = s.status || 'unknown';
-      return `<tr>
-        <td><span class="dot ${dot}"></span></td>
-        <td>${site.name}</td>
-        <td><a href="${site.url}" target="_blank" rel="noopener">${site.url}</a></td>
-        <td><span class="pill ${dot}">${label}</span></td>
-        <td>${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
-        <td>${s.lastCheckedAt ? new Date(s.lastCheckedAt).toLocaleString('en-GB') : '-'}</td>
-        <td>${s.error ? escapeHtml(s.error) : ''}</td>
-      </tr>`;
-    })
-    .join('\n');
+  function rowsFor(list) {
+    return list
+      .map((site) => {
+        const s = statusMap[site.name] || {};
+        return `<tr>
+          <td>${site.name}</td>
+          <td><a href="${site.url}" target="_blank" rel="noopener">${site.url}</a></td>
+          <td>${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
+          <td>${s.lastCheckedAt ? new Date(s.lastCheckedAt).toLocaleString('en-GB') : '-'}</td>
+          <td>${s.error ? escapeHtml(s.error) : ''}</td>
+        </tr>`;
+      })
+      .join('\n');
+  }
 
-  const upCount = Object.values(statusMap).filter((s) => s.status === 'up').length;
-  const downCount = Object.values(statusMap).filter((s) => s.status === 'down').length;
+  const upSites = sites.filter((site) => (statusMap[site.name] || {}).status === 'up');
+  const downSites = sites.filter((site) => (statusMap[site.name] || {}).status === 'down');
+  const upCount = upSites.length;
+  const downCount = downSites.length;
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8" />
@@ -191,40 +191,52 @@ header .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient
 h1{font-size:17px;margin:0;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 main{max-width:1100px;margin:0 auto;padding:28px}
 .summary{display:flex;gap:14px;margin-bottom:22px}
-.stat{flex:1;background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:14px;padding:14px 18px}
+.stat{flex:1;background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;transition:border-color .15s ease,transform .15s ease}
+.stat:hover{border-color:var(--accent-2);transform:translateY(-1px)}
 .stat .label{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .stat .value{font-size:24px;font-weight:700;margin-top:4px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;font-size:13px}
+.columns{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.col{flex:1;min-width:340px;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-margin-top:20px}
+.col.down-col{order:1;border-top:2px solid var(--down)}
+.col.up-col{order:2;border-top:2px solid var(--up)}
+.col h2{font-size:13px;margin:0;padding:14px 16px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.04em}
+.col.down-col h2{color:var(--down)}
+.col.up-col h2{color:var(--up)}
+table{width:100%;border-collapse:collapse;font-size:13px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
 th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
 tr:hover td{background:#1b1e27}
 a{color:var(--muted);text-decoration:none}
 a:hover{color:var(--text)}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%}
-.dot.up{background:var(--up);box-shadow:0 0 0 4px rgba(52,211,153,.35)}
-.dot.down{background:var(--down);box-shadow:0 0 0 4px rgba(245,103,122,.4)}
-.dot.unknown{background:var(--muted)}
-.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
-.pill.up{background:rgba(52,211,153,.14);color:var(--up)}
-.pill.down{background:rgba(245,103,122,.14);color:var(--down)}
-.pill.unknown{background:rgba(139,147,167,.14);color:var(--muted)}
 footer{text-align:center;padding:30px;color:#5d6472;font-size:12.5px}
 footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:760px){.col{min-width:100%}}
 </style>
 </head><body>
 <header><div class="mark"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M7 18h4l2.5-8L18 25l2.5-8H25" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h1>Rock It Uptime Monitor</h1></header>
 <main>
 <div class="summary">
-  <div class="stat"><div class="label">Total sites</div><div class="value">${sites.length}</div></div>
-  <div class="stat"><div class="label">Up</div><div class="value" style="color:var(--up)">${upCount}</div></div>
-  <div class="stat"><div class="label">Down</div><div class="value" style="color:var(--down)">${downCount}</div></div>
+  <div class="stat" style="cursor:default"><div class="label">Total sites</div><div class="value">${sites.length}</div></div>
+  <button class="stat" onclick="document.getElementById('up-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Up</div><div class="value" style="color:var(--up)">${upCount}</div></button>
+  <button class="stat" onclick="document.getElementById('down-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Down</div><div class="value" style="color:var(--down)">${downCount}</div></button>
 </div>
-<table>
-<thead><tr><th></th><th>Name</th><th>URL</th><th>Status</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
-<tbody>
-${rows}
-</tbody>
-</table>
+<div class="columns">
+  <div class="col down-col" id="down-col">
+    <h2>🔴 Down (${downCount})</h2>
+    <table>
+      <thead><tr><th>Name</th><th>URL</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
+      <tbody>${rowsFor(downSites) || `<tr><td colspan="5" style="color:var(--muted)">Nothing down 🎉</td></tr>`}</tbody>
+    </table>
+  </div>
+  <div class="col up-col" id="up-col">
+    <h2>🟢 Up (${upCount})</h2>
+    <table>
+      <thead><tr><th>Name</th><th>URL</th><th>Response</th><th>Last checked (UTC)</th><th>Notes</th></tr></thead>
+      <tbody>${rowsFor(upSites)}</tbody>
+    </table>
+  </div>
+</div>
 </main>
 <footer>Powered by <b>RockIt AI Technologies</b> — checked hourly via GitHub Actions</footer>
 </body></html>`;
