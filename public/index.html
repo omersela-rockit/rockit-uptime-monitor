@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Rock It Uptime Monitor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M7 18h4l2.5-8L18 25l2.5-8H25' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="mark">
+      <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 18h4l2.5-8L18 25l2.5-8H25" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1 class="gradient-text">Rock It Uptime Monitor</h1>
+  </div>
+  <div class="actions">
+    <button class="secondary" id="testEmailBtn">Send test email</button>
+    <button class="secondary" id="bulkAddBtn">+ Add multiple sites</button>
+    <button id="addSiteBtn">+ Add site</button>
+    <button class="secondary" id="logoutBtn">Log out</button>
+  </div>
+</header>
+
+<main>
+  <div id="listView">
+    <div class="site-list" id="siteList"></div>
+    <div class="empty-state hidden" id="emptyState">
+      <div class="icon">📡</div>
+      <div class="title">No sites yet</div>
+      <div class="hint">Click "+ Add site" (or "+ Add multiple sites") to start monitoring your first website.</div>
+    </div>
+  </div>
+
+  <div id="detailView" class="hidden">
+    <a href="#" class="back-link" id="backLink">&larr; Back to all sites</a>
+    <h2 id="detailName" class="gradient-text"></h2>
+    <p><a id="detailUrl" href="#" target="_blank" style="color:var(--muted)"></a></p>
+    <div class="stat-grid">
+      <div class="stat-box"><div class="label">Status</div><div class="value" id="detailStatus"></div></div>
+      <div class="stat-box"><div class="label">Uptime (24h)</div><div class="value" id="detailUptime24"></div></div>
+      <div class="stat-box"><div class="label">Uptime (7d)</div><div class="value" id="detailUptime7"></div></div>
+      <div class="stat-box"><div class="label">Avg response</div><div class="value" id="detailAvgResp"></div></div>
+    </div>
+    <div>
+      <button class="secondary" id="checkNowBtn">Check now</button>
+      <button class="secondary" id="editSiteBtn">Edit</button>
+      <button class="secondary" id="pauseSiteBtn">Pause</button>
+      <button class="danger" id="deleteSiteBtn">Delete</button>
+    </div>
+
+    <div class="section-title">Recent checks</div>
+    <table>
+      <thead><tr><th>Time</th><th>Status</th><th>Code</th><th>Response time</th><th>Error</th></tr></thead>
+      <tbody id="checksTable"></tbody>
+    </table>
+
+    <div class="section-title">Incidents</div>
+    <table>
+      <thead><tr><th>Started</th><th>Resolved</th><th>Cause</th></tr></thead>
+      <tbody id="incidentsTable"></tbody>
+    </table>
+  </div>
+
+  <footer class="app-footer">Powered by <span class="brand-name">RockIt AI Technologies</span></footer>
+</main>
+
+<div class="modal-backdrop hidden" id="siteModalBackdrop">
+  <form class="card modal" id="siteForm">
+    <h2 id="modalTitle">Add site</h2>
+    <input type="hidden" name="id" />
+    <label>Name</label>
+    <input type="text" name="name" placeholder="My website" required />
+    <label>URL</label>
+    <input type="text" name="url" placeholder="https://example.com" required />
+    <div class="row">
+      <div>
+        <label>Method</label>
+        <select name="method">
+          <option value="GET">GET</option>
+          <option value="HEAD">HEAD</option>
+        </select>
+      </div>
+      <div>
+        <label>Check every (minutes)</label>
+        <input type="number" name="interval_minutes" value="5" min="1" />
+      </div>
+    </div>
+    <label>Keyword expected in page (optional)</label>
+    <input type="text" name="keyword" placeholder="leave blank to skip" />
+    <div class="error" id="siteFormErr"></div>
+    <div class="modal-actions">
+      <button type="button" class="secondary" id="cancelSiteBtn">Cancel</button>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-backdrop hidden" id="bulkModalBackdrop">
+  <form class="card modal" id="bulkForm">
+    <h2>Add multiple sites</h2>
+    <label>One URL per line (optionally "Name = https://url")</label>
+    <textarea name="text" rows="8" placeholder="https://example.com
+My Shop = https://myshop.com
+https://myblog.com" required></textarea>
+    <div class="row">
+      <div>
+        <label>Check every (minutes)</label>
+        <input type="number" name="interval_minutes" value="5" min="1" />
+      </div>
+      <div>
+        <label>Keyword expected (optional, applies to all)</label>
+        <input type="text" name="keyword" placeholder="leave blank to skip" />
+      </div>
+    </div>
+    <div class="error" id="bulkFormErr"></div>
+    <div class="modal-actions">
+      <button type="button" class="secondary" id="cancelBulkBtn">Cancel</button>
+      <button type="submit">Add all sites</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
