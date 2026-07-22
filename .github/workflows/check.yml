@@ -36,14 +36,6 @@ jobs:
         run: |
           git config user.name "rockit-uptime-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add status.json docs/index.html
+          git add status.json
           git diff --staged --quiet || git commit -m "Update status $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
-
-      - name: Deploy to Cloudflare Pages (private, behind Access)
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: rockit-status-page
-          directory: docs
