@@ -162,7 +162,7 @@ function renderStatusPage(sites, statusMap) {
       .map((site) => {
         const s = statusMap[site.name] || {};
         const note = s.error ? escapeHtml(s.error) : '';
-        return `<tr>
+        return `<tr data-name="${escapeHtml(site.name.toLowerCase())}">
           <td><a href="${site.url}" target="_blank" rel="noopener" title="${site.url}">${site.name}</a></td>
           <td class="nowrap">${s.responseTimeMs != null ? s.responseTimeMs + ' ms' : '-'}</td>
           <td class="note" title="${note}">${note}</td>
@@ -189,14 +189,16 @@ body{margin:0;background:radial-gradient(900px 500px at 12% -10%,#1b1040 0%,tran
 header{display:flex;align-items:center;gap:12px;padding:20px 28px;border-bottom:1px solid var(--border)}
 header .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -4px rgba(99,102,241,.6)}
 h1{font-size:17px;margin:0;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-main{max-width:1100px;margin:0 auto;padding:28px}
+main{max-width:900px;margin:0 auto;padding:28px}
 .summary{display:flex;gap:14px;margin-bottom:22px}
 .stat{flex:1;background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:14px;padding:14px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;transition:border-color .15s ease,transform .15s ease}
 .stat:hover{border-color:var(--accent-2);transform:translateY(-1px)}
 .stat .label{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .stat .value{font-size:24px;font-weight:700;margin-top:4px}
-main{max-width:900px}
-.updated{color:var(--muted-2,#5d6472);font-size:12px;margin:-14px 0 18px}
+.updated{color:var(--muted-2,#5d6472);font-size:12px;margin:-14px 0 10px}
+.search{width:100%;padding:11px 14px;margin:0 0 18px;background:var(--panel);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:inherit;box-sizing:border-box}
+.search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,102,241,.22)}
+.hidden{display:none!important}
 .columns{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
 .col{flex:1 1 300px;min-width:0;max-width:100%;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-margin-top:20px}
 .col.down-col{order:1;border-top:2px solid var(--down)}
@@ -228,6 +230,8 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
   <button class="stat" onclick="document.getElementById('down-col').scrollIntoView({behavior:'smooth',block:'start'})"><div class="label">Down</div><div class="value" style="color:var(--down)">${downCount}</div></button>
 </div>
 <p class="updated">Last checked: ${lastRunLabel} · updates hourly</p>
+<input type="search" id="searchBox" class="search" placeholder="🔎 Search a site by name…" oninput="filterSites(this.value)" />
+<p id="searchEmpty" class="hidden" style="color:var(--muted);font-size:13px;margin:-10px 0 16px">No sites match "<span id="searchEmptyTerm"></span>"</p>
 <div class="columns">
   <div class="col down-col" id="down-col">
     <h2>🔴 Down (${downCount})</h2>
@@ -246,6 +250,20 @@ footer b{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webki
 </div>
 </main>
 <footer>Powered by <b>RockIt AI Technologies</b> — checked hourly via GitHub Actions</footer>
+<script>
+function filterSites(query) {
+  const q = query.trim().toLowerCase();
+  const rows = document.querySelectorAll('tr[data-name]');
+  let visibleCount = 0;
+  rows.forEach((row) => {
+    const match = !q || row.dataset.name.includes(q);
+    row.classList.toggle('hidden', !match);
+    if (match) visibleCount++;
+  });
+  document.getElementById('searchEmpty').classList.toggle('hidden', !(q && visibleCount === 0));
+  document.getElementById('searchEmptyTerm').textContent = query;
+}
+</script>
 </body></html>`;
 }
 
