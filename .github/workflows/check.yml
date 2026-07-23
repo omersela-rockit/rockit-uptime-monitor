@@ -1,8 +1,13 @@
 name: Hourly uptime check
 
 on:
+  # GitHub's own schedule trigger is unreliable in practice (observed gaps of
+  # 5-10 hours instead of firing hourly as configured). Running every 15
+  # minutes instead of once an hour gives it far more chances to actually
+  # fire, so real-world gaps stay small even though most of these attempts
+  # get silently dropped by GitHub. No external service, no new account.
   schedule:
-    - cron: '7 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -21,9 +26,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
 
       - name: Install script dependencies
-        run: npm install --prefix scripts
+        run: npm ci --prefix scripts
 
       - name: Run checks
         env:
