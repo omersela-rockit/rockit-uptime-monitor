@@ -13,14 +13,38 @@ const HEARTBEAT_FILE = path.join(ROOT, 'heartbeat.json');
 const DOCS_DIR = path.join(ROOT, 'docs');
 
 const CONCURRENCY = 6;
-const TIMEOUT_MS = 15000;
+// Generous on purpose: a slow site is not a down site, and a cloud runner's
+// route to a given host is often slower than a normal connection. 15s was
+// producing false "timed out" alerts for sites that load fine in a browser.
+const TIMEOUT_MS = 30000;
 const SLOW_RESPONSE_MS = 8000;
-const RETRY_DELAY_MS = 4000;
+const RETRY_DELAY_MS = 5000;
 
-// A site must fail this many checks in a row before an email goes out. At a
-// 5-minute cadence that means a failure is always re-confirmed ~5 minutes later
-// before anyone is told -- which is what kills the false-alarm emails.
-const CONFIRM_FAILURES = 2;
+// How many checks in a row must fail before an email goes out.
+// Definitive failures (DNS missing, expired cert, 5xx) are trustworthy signals,
+// so two in a row is enough. Network-level failures (timeouts, resets) are the
+// ones that produce false alarms from cloud runners, so they need a third
+// confirmation before anyone is told.
+const CONFIRM_FAILURES_DEFINITIVE = 2;
+const CONFIRM_FAILURES_NETWORK = 3;
+
+// Errors that reflect the network path to the site rather than the site itself.
+const NETWORK_ERROR_PATTERNS = [
+  'timed out',
+  'socket hang up',
+  'ECONNRESET',
+  'ECONNREFUSED',
+  'EAI_AGAIN',
+  'ETIMEDOUT',
+  'network',
+];
+
+function requiredFailures(error) {
+  if (!error) return CONFIRM_FAILURES_DEFINITIVE;
+  const lower = String(error).toLowerCase();
+  const isNetwork = NETWORK_ERROR_PATTERNS.some((p) => lower.includes(p.toLowerCase()));
+  return isNetwork ? CONFIRM_FAILURES_NETWORK : CONFIRM_FAILURES_DEFINITIVE;
+}
 
 // How many recent check timestamps to keep for the hourly self-audit.
 const HEARTBEAT_KEEP = 400;
@@ -329,15 +353,16 @@ async function main() {
     const failures = result.status === 'down' ? prevFailures + 1 : 0;
     const downSince = result.status === 'down' ? prevEntry.downSince || nowIso : null;
 
-    // Only email once the failure has been confirmed by a later check, and only
+    // Only email once the failure has been confirmed by later checks, and only
     // email a recovery if we actually told anyone it was down in the first place.
+    const needed = requiredFailures(result.error);
     let alerted = wasAlerted;
-    if (result.status === 'down' && !wasAlerted && failures >= CONFIRM_FAILURES) {
+    if (result.status === 'down' && !wasAlerted && failures >= needed) {
       console.log(`[alert] ${site.name} -> DOWN confirmed ${failures}x (${result.error})`);
       await sendDownAlert(site, result).catch((e) => console.error('[mail] down alert failed', e.message));
       alerted = true;
     } else if (result.status === 'down' && !wasAlerted) {
-      console.log(`[pending] ${site.name} failed ${failures}/${CONFIRM_FAILURES} - waiting for confirmation, no email yet`);
+      console.log(`[pending] ${site.name} failed ${failures}/${needed} - waiting for confirmation, no email yet`);
     } else if (result.status === 'up' && wasAlerted) {
       const since = prevEntry.downSince ? new Date(prevEntry.downSince) : new Date();
       const minutes = Math.max(1, Math.round((Date.now() - since.getTime()) / 60000));
