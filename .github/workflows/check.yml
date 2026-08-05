@@ -1,11 +1,11 @@
-name: Hourly uptime check
+name: Uptime monitor (5-minute loop)
 
+# GitHub's `schedule:` trigger is unreliable -- measured gaps of 3.5-13 hours
+# when it was configured to fire every 15 minutes. So the cadence is NOT left to
+# GitHub: one job stays alive for ~5.5 hours and runs a check every 5 minutes
+# itself, then hands off to a fresh run. The schedule below is only a safety net
+# that restarts the chain if it ever dies.
 on:
-  # GitHub's own schedule trigger is unreliable in practice (observed gaps of
-  # 5-10 hours instead of firing hourly as configured). Running every 15
-  # minutes instead of once an hour gives it far more chances to actually
-  # fire, so real-world gaps stay small even though most of these attempts
-  # get silently dropped by GitHub. No external service, no new account.
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch: {}
@@ -14,12 +14,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: uptime-check
+  group: uptime-monitor
   cancel-in-progress: false
 
 jobs:
-  check:
+  monitor:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
 
@@ -32,17 +33,41 @@ jobs:
       - name: Install script dependencies
         run: npm ci --prefix scripts
 
-      - name: Run checks
+      - name: Check every 5 minutes for ~5.5 hours
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
-        run: node scripts/check-all.js
-
-      - name: Commit updated status
         run: |
           git config user.name "rockit-uptime-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add status.json docs/index.html
-          git diff --staged --quiet || git commit -m "Update status $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+
+          END=$(( $(date +%s) + 5*3600 + 1800 ))
+          while [ "$(date +%s)" -lt "$END" ]; do
+            START=$(date +%s)
+
+            node scripts/check-all.js || echo "check failed, continuing loop"
+
+            git add status.json heartbeat.json docs/index.html 2>/dev/null || true
+            if ! git diff --staged --quiet; then
+              git commit -q -m "Update status $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+              git pull --rebase -q origin master || true
+              git push -q || echo "push failed, will retry next cycle"
+            fi
+
+            # Sleep whatever is left of the 5-minute window.
+            ELAPSED=$(( $(date +%s) - START ))
+            REMAIN=$(( 300 - ELAPSED ))
+            [ "$REMAIN" -gt 0 ] && sleep "$REMAIN"
+          done
+
+      - name: Hand off to a fresh run
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "DISPATCH_TOKEN not set -- relying on the scheduled safety net to restart the chain."
+            exit 0
+          fi
+          gh workflow run check.yml --repo ${{ github.repository }} --ref master

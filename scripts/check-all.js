@@ -9,11 +9,21 @@ const nodemailer = require('nodemailer');
 const ROOT = path.join(__dirname, '..');
 const SITES_FILE = path.join(ROOT, 'sites.json');
 const STATUS_FILE = path.join(ROOT, 'status.json');
+const HEARTBEAT_FILE = path.join(ROOT, 'heartbeat.json');
 const DOCS_DIR = path.join(ROOT, 'docs');
 
 const CONCURRENCY = 6;
 const TIMEOUT_MS = 15000;
 const SLOW_RESPONSE_MS = 8000;
+const RETRY_DELAY_MS = 4000;
+
+// A site must fail this many checks in a row before an email goes out. At a
+// 5-minute cadence that means a failure is always re-confirmed ~5 minutes later
+// before anyone is told -- which is what kills the false-alarm emails.
+const CONFIRM_FAILURES = 2;
+
+// How many recent check timestamps to keep for the hourly self-audit.
+const HEARTBEAT_KEEP = 400;
 
 const ERROR_SIGNATURES = [
   'account has been suspended',
@@ -42,7 +52,24 @@ function loadJson(file, fallback) {
   }
 }
 
+// A single site check, with one immediate retry. Most "down" readings from a
+// cloud runner are transient blips (a dropped connection, a momentary 5xx). One
+// retry a few seconds later removes the majority of them before they ever reach
+// the alerting logic.
 async function checkSite(site) {
+  const first = await checkSiteOnce(site);
+  if (first.status === 'up') return first;
+
+  await new Promise((r) => setTimeout(r, RETRY_DELAY_MS));
+  const second = await checkSiteOnce(site);
+  if (second.status === 'up') {
+    second.error = null;
+    return second;
+  }
+  return second;
+}
+
+async function checkSiteOnce(site) {
   const startedAt = Date.now();
   let status = 'up';
   let statusCode = null;
@@ -295,17 +322,28 @@ async function main() {
   for (let i = 0; i < sites.length; i++) {
     const site = sites[i];
     const result = results[i];
-    const prevEntry = prev.sites[site.name];
-    const wasStatus = prevEntry ? prevEntry.status : 'unknown';
+    const prevEntry = prev.sites[site.name] || {};
+    const prevFailures = prevEntry.consecutiveFailures || 0;
+    const wasAlerted = !!prevEntry.alerted;
 
-    if (result.status === 'down' && wasStatus !== 'down') {
-      console.log(`[alert] ${site.name} -> DOWN (${result.error})`);
+    const failures = result.status === 'down' ? prevFailures + 1 : 0;
+    const downSince = result.status === 'down' ? prevEntry.downSince || nowIso : null;
+
+    // Only email once the failure has been confirmed by a later check, and only
+    // email a recovery if we actually told anyone it was down in the first place.
+    let alerted = wasAlerted;
+    if (result.status === 'down' && !wasAlerted && failures >= CONFIRM_FAILURES) {
+      console.log(`[alert] ${site.name} -> DOWN confirmed ${failures}x (${result.error})`);
       await sendDownAlert(site, result).catch((e) => console.error('[mail] down alert failed', e.message));
-    } else if (result.status === 'up' && wasStatus === 'down') {
-      const downSince = prevEntry.downSince ? new Date(prevEntry.downSince) : new Date();
-      const minutes = Math.max(1, Math.round((Date.now() - downSince.getTime()) / 60000));
+      alerted = true;
+    } else if (result.status === 'down' && !wasAlerted) {
+      console.log(`[pending] ${site.name} failed ${failures}/${CONFIRM_FAILURES} - waiting for confirmation, no email yet`);
+    } else if (result.status === 'up' && wasAlerted) {
+      const since = prevEntry.downSince ? new Date(prevEntry.downSince) : new Date();
+      const minutes = Math.max(1, Math.round((Date.now() - since.getTime()) / 60000));
       console.log(`[alert] ${site.name} -> back UP after ~${minutes}m`);
       await sendRecoveryAlert(site, minutes).catch((e) => console.error('[mail] recovery alert failed', e.message));
+      alerted = false;
     }
 
     statusMap[site.name] = {
@@ -314,11 +352,20 @@ async function main() {
       error: result.error,
       responseTimeMs: result.responseTimeMs,
       lastCheckedAt: nowIso,
-      downSince: result.status === 'down' ? (wasStatus === 'down' ? prevEntry.downSince : nowIso) : null,
+      downSince,
+      consecutiveFailures: failures,
+      alerted,
     };
   }
 
   fs.writeFileSync(STATUS_FILE, JSON.stringify({ lastRunAt: nowIso, sites: statusMap }, null, 2));
+
+  // Append-only record of when checks actually ran, so the hourly watchdog can
+  // prove the 5-minute cadence is really happening instead of taking it on faith.
+  const heartbeat = loadJson(HEARTBEAT_FILE, { checks: [] });
+  heartbeat.checks.push(nowIso);
+  heartbeat.checks = heartbeat.checks.slice(-HEARTBEAT_KEEP);
+  fs.writeFileSync(HEARTBEAT_FILE, JSON.stringify(heartbeat, null, 2));
 
   if (!fs.existsSync(DOCS_DIR)) fs.mkdirSync(DOCS_DIR, { recursive: true });
   fs.writeFileSync(path.join(DOCS_DIR, 'index.html'), renderStatusPage(sites, statusMap));
