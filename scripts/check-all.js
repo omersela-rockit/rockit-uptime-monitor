@@ -28,6 +28,15 @@ const RETRY_DELAY_MS = 5000;
 const CONFIRM_FAILURES_DEFINITIVE = 2;
 const CONFIRM_FAILURES_NETWORK = 3;
 
+// If this share of all sites fails in one cycle, stop trusting the result until
+// the canaries below confirm the runner can reach the internet at all.
+const MASS_FAILURE_RATIO = 0.25;
+
+// Big, independently-hosted, extremely reliable endpoints. If these are also
+// unreachable, the fault is on this end -- no real event takes Google, Cloudflare
+// and GitHub down at the same moment as a customer's WordPress site.
+const CANARY_URLS = ['https://www.google.com', 'https://www.cloudflare.com', 'https://github.com'];
+
 // Errors that reflect the network path to the site rather than the site itself.
 const NETWORK_ERROR_PATTERNS = [
   'timed out',
@@ -157,6 +166,37 @@ async function checkSiteOnce(site) {
   }
 
   return { status, statusCode, error, responseTimeMs };
+}
+
+// Append-only record of when checks actually ran, so the hourly watchdog can
+// prove the 5-minute cadence is really happening instead of taking it on faith.
+function recordHeartbeat(nowIso = new Date().toISOString()) {
+  const heartbeat = loadJson(HEARTBEAT_FILE, { checks: [] });
+  heartbeat.checks.push(nowIso);
+  heartbeat.checks = heartbeat.checks.slice(-HEARTBEAT_KEEP);
+  fs.writeFileSync(HEARTBEAT_FILE, JSON.stringify(heartbeat, null, 2));
+}
+
+// Independent proof of whether this runner can reach the internet right now.
+async function checkCanaries() {
+  return Promise.all(
+    CANARY_URLS.map(async (url) => {
+      const host = new URL(url).host;
+      try {
+        const res = await axios.get(url, {
+          timeout: TIMEOUT_MS,
+          validateStatus: () => true,
+          headers: {
+            'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          },
+        });
+        return { host, ok: res.status < 500 };
+      } catch (err) {
+        return { host, ok: false, error: err.message };
+      }
+    })
+  );
 }
 
 async function checkAllThrottled(sites) {
@@ -340,6 +380,34 @@ async function main() {
   const prev = loadJson(STATUS_FILE, { sites: {} });
   const results = await checkAllThrottled(sites);
 
+  // Guard against the runner's own network breaking and making every site look
+  // dead. On 2026-08-10T21:08 twenty unrelated sites "failed" in the same second
+  // with a mix of timeouts and 502s, then all recovered together 21 minutes
+  // later -- that was the egress path, not the sites. Per-site confirmation
+  // can't catch this because every site fails repeatedly during such an outage.
+  const failed = results.filter((r) => r.status === 'down').length;
+  const failureRatio = sites.length ? failed / sites.length : 0;
+
+  if (failureRatio >= MASS_FAILURE_RATIO) {
+    const canaries = await checkCanaries();
+    const canariesDown = canaries.filter((c) => !c.ok);
+    if (canariesDown.length >= 2) {
+      console.error(
+        `[network] ${failed}/${sites.length} sites failed AND ${canariesDown.length}/${canaries.length} canaries ` +
+          `(${canariesDown.map((c) => c.host).join(', ')}) are unreachable -- this is the monitor's own network, not your sites.`
+      );
+      console.error('[network] leaving all statuses unchanged and sending no alerts this cycle.');
+      // Still record the heartbeat: the loop ran on time, it just couldn't trust
+      // what it saw. Suppressing that would make the cadence look broken too.
+      recordHeartbeat();
+      return;
+    }
+    console.warn(
+      `[network] ${failed}/${sites.length} sites failed but canaries are reachable ` +
+        '-- treating as a real outage (shared hosting can fail together).'
+    );
+  }
+
   const statusMap = {};
   const nowIso = new Date().toISOString();
 
@@ -385,12 +453,7 @@ async function main() {
 
   fs.writeFileSync(STATUS_FILE, JSON.stringify({ lastRunAt: nowIso, sites: statusMap }, null, 2));
 
-  // Append-only record of when checks actually ran, so the hourly watchdog can
-  // prove the 5-minute cadence is really happening instead of taking it on faith.
-  const heartbeat = loadJson(HEARTBEAT_FILE, { checks: [] });
-  heartbeat.checks.push(nowIso);
-  heartbeat.checks = heartbeat.checks.slice(-HEARTBEAT_KEEP);
-  fs.writeFileSync(HEARTBEAT_FILE, JSON.stringify(heartbeat, null, 2));
+  recordHeartbeat(nowIso);
 
   if (!fs.existsSync(DOCS_DIR)) fs.mkdirSync(DOCS_DIR, { recursive: true });
   fs.writeFileSync(path.join(DOCS_DIR, 'index.html'), renderStatusPage(sites, statusMap));
