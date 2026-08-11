@@ -3,8 +3,10 @@
 // regenerates the static docs/index.html status page.
 const fs = require('fs');
 const path = require('path');
+const dnsPromises = require('dns').promises;
 const axios = require('axios');
 const nodemailer = require('nodemailer');
+const { diagnose } = require('./diagnose');
 
 const ROOT = path.join(__dirname, '..');
 const SITES_FILE = path.join(ROOT, 'sites.json');
@@ -230,12 +232,63 @@ async function sendMail(subject, html, text) {
   await transport.sendMail({ from: `"Rock It Uptime Monitor" <${process.env.GMAIL_USER}>`, to, subject, html, text });
 }
 
-async function sendDownAlert(site, result) {
+const CATEGORY_LABELS = {
+  dns: 'Domain / DNS',
+  tls: 'SSL certificate',
+  connection: 'Server unreachable',
+  server: 'Server error',
+  content: 'Page content',
+  config: 'Configuration',
+  unknown: 'Inconclusive',
+};
+
+async function sendDownAlert(site, result, diagnosis) {
   const reason = result.error || `HTTP ${result.statusCode}`;
+
+  let diagnosisHtml = '';
+  let diagnosisText = '';
+  if (diagnosis) {
+    const shared = diagnosis.sharedWith && diagnosis.sharedWith.length
+      ? `<p style="margin:14px 0 0;padding:10px 12px;background:#fff4e5;border-left:3px solid #f5a623;border-radius:4px">
+           <b>${diagnosis.sharedWith.length + 1} sites are affected together:</b> ${[site.name, ...diagnosis.sharedWith].join(', ')}.
+           This is one incident on shared infrastructure, not separate failures.
+         </p>`
+      : '';
+    diagnosisHtml = `
+      <div style="margin-top:22px;padding:16px;background:#f7f8fa;border-radius:8px">
+        <div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#8b93a7;font-weight:700">
+          Diagnosis &middot; ${CATEGORY_LABELS[diagnosis.category] || diagnosis.category}
+        </div>
+        <h3 style="margin:6px 0 10px">${diagnosis.headline}</h3>
+        <p style="margin:0 0 10px"><b>What this means:</b> ${diagnosis.likelyCause}</p>
+        <p style="margin:0 0 14px"><b>What to do:</b> ${diagnosis.action}</p>
+        ${shared}
+        <details style="margin-top:12px">
+          <summary style="cursor:pointer;color:#6366f1;font-size:13px">Technical evidence</summary>
+          <ul style="font-size:13px;color:#555;margin:8px 0 0;padding-left:18px">
+            ${diagnosis.evidence.map((e) => `<li>${e}</li>`).join('')}
+          </ul>
+        </details>
+      </div>`;
+    diagnosisText =
+      `\n\nDIAGNOSIS (${CATEGORY_LABELS[diagnosis.category] || diagnosis.category}): ${diagnosis.headline}\n` +
+      `What this means: ${diagnosis.likelyCause}\n` +
+      `What to do: ${diagnosis.action}\n` +
+      (diagnosis.sharedWith && diagnosis.sharedWith.length
+        ? `Also affected on the same server: ${diagnosis.sharedWith.join(', ')}\n`
+        : '') +
+      `Evidence:\n${diagnosis.evidence.map((e) => '  - ' + e).join('\n')}`;
+  }
+
+  const subject = diagnosis ? `🔴 DOWN: ${site.name} — ${diagnosis.headline}` : `🔴 DOWN: ${site.name}`;
+
   await sendMail(
-    `🔴 DOWN: ${site.name}`,
-    `<h2 style="color:#c0392b">${site.name} is DOWN</h2><p><b>URL:</b> ${site.url}</p><p><b>Reason:</b> ${reason}</p>`,
-    `${site.name} (${site.url}) is DOWN. Reason: ${reason}`
+    subject,
+    `<h2 style="color:#c0392b">${site.name} is DOWN</h2>
+     <p><b>URL:</b> <a href="${site.url}">${site.url}</a></p>
+     <p><b>Detected error:</b> ${reason}</p>
+     ${diagnosisHtml}`,
+    `${site.name} (${site.url}) is DOWN. Detected error: ${reason}${diagnosisText}`
   );
 }
 
@@ -411,6 +464,28 @@ async function main() {
   const statusMap = {};
   const nowIso = new Date().toISOString();
 
+  // Group the currently-failing sites by the IP they resolve to. When a batch of
+  // client sites goes dark at once it is almost always one shared server, and
+  // saying so turns twenty confusing emails into one clear incident.
+  const downPeers = new Map();
+  const downNow = sites.filter((_, i) => results[i].status === 'down');
+  if (downNow.length > 1) {
+    await Promise.all(
+      downNow.map(async (site) => {
+        try {
+          const ips = await dnsPromises.resolve4(new URL(site.url).hostname);
+          if (!ips.length) return;
+          const list = downPeers.get(ips[0]) || [];
+          list.push(site.name);
+          downPeers.set(ips[0], list);
+        } catch {
+          // Unresolvable hosts can't share an IP with anything; DNS-layer
+          // diagnosis will explain those individually.
+        }
+      })
+    );
+  }
+
   for (let i = 0; i < sites.length; i++) {
     const site = sites[i];
     const result = results[i];
@@ -425,10 +500,20 @@ async function main() {
     // email a recovery if we actually told anyone it was down in the first place.
     const needed = requiredFailures(result.error);
     let alerted = wasAlerted;
+    let diagnosis = prevEntry.diagnosis || null;
     if (result.status === 'down' && !wasAlerted && failures >= needed) {
       console.log(`[alert] ${site.name} -> DOWN confirmed ${failures}x (${result.error})`);
-      await sendDownAlert(site, result).catch((e) => console.error('[mail] down alert failed', e.message));
+      // Only diagnosed at the moment of alerting: it costs several probes, and
+      // this is exactly when someone needs to know the cause.
+      diagnosis = await diagnose(site, result, { downPeers }).catch((e) => {
+        console.error('[diagnose] failed', e.message);
+        return null;
+      });
+      if (diagnosis) console.log(`[diagnose] ${site.name}: [${diagnosis.category}] ${diagnosis.headline}`);
+      await sendDownAlert(site, result, diagnosis).catch((e) => console.error('[mail] down alert failed', e.message));
       alerted = true;
+    } else if (result.status === 'up') {
+      diagnosis = null;
     } else if (result.status === 'down' && !wasAlerted) {
       console.log(`[pending] ${site.name} failed ${failures}/${needed} - waiting for confirmation, no email yet`);
     } else if (result.status === 'up' && wasAlerted) {
@@ -448,6 +533,7 @@ async function main() {
       downSince,
       consecutiveFailures: failures,
       alerted,
+      diagnosis,
     };
   }
 
