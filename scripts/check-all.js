@@ -512,8 +512,6 @@ async function main() {
       if (diagnosis) console.log(`[diagnose] ${site.name}: [${diagnosis.category}] ${diagnosis.headline}`);
       await sendDownAlert(site, result, diagnosis).catch((e) => console.error('[mail] down alert failed', e.message));
       alerted = true;
-    } else if (result.status === 'up') {
-      diagnosis = null;
     } else if (result.status === 'down' && !wasAlerted) {
       console.log(`[pending] ${site.name} failed ${failures}/${needed} - waiting for confirmation, no email yet`);
     } else if (result.status === 'up' && wasAlerted) {
@@ -522,6 +520,15 @@ async function main() {
       console.log(`[alert] ${site.name} -> back UP after ~${minutes}m`);
       await sendRecoveryAlert(site, minutes).catch((e) => console.error('[mail] recovery alert failed', e.message));
       alerted = false;
+      diagnosis = null;
+    } else if (result.status === 'up') {
+      diagnosis = null;
+    } else if (result.status === 'down' && wasAlerted && !diagnosis) {
+      // Already-alerted outage with no diagnosis on record (it started before
+      // diagnosis existed, or the probe failed last time). Fill it in for the
+      // dashboard without emailing again -- they were already told.
+      diagnosis = await diagnose(site, result, { downPeers }).catch(() => null);
+      if (diagnosis) console.log(`[diagnose] ${site.name} (backfill): [${diagnosis.category}] ${diagnosis.headline}`);
     }
 
     statusMap[site.name] = {
