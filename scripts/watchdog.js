@@ -9,9 +9,12 @@ const ROOT = path.join(__dirname, '..');
 const HEARTBEAT_FILE = path.join(ROOT, 'heartbeat.json');
 
 const EXPECTED_PER_HOUR = 12;
-// A run that lands a few seconds late shouldn't trip the alarm; 10 of 12 still
-// means the cadence is working.
-const MIN_ACCEPTABLE = 10;
+// supervisor.js now auto-repairs a broken chain within ~10-20 minutes, which
+// legitimately costs a few checks in the affected hour. Alerting at 10/12 turned
+// those self-healed blips into inbox noise. This threshold is deliberately low:
+// it should only fire when the system is genuinely, persistently broken -- i.e.
+// self-repair itself is failing -- because that is the only case an email helps.
+const MIN_ACCEPTABLE = 6;
 
 function loadJson(file, fallback) {
   try {
@@ -72,6 +75,9 @@ async function main() {
     <p>Checks recorded: <b>${recent.length}</b> (expected about ${expected}).</p>
     <p>Last check: <b>${minutesSinceLast === null ? 'never' : minutesSinceLast + ' minutes ago'}</b>.</p>
     <p>This means site statuses on the dashboard may be stale, and an outage could go unnoticed.</p>
+    <p style="color:#8b93a7">The supervisor tries to restart a broken chain automatically every 10 minutes.
+    Getting this email means self-repair has not managed to restore the cadence, so it needs a look:
+    <a href="https://github.com/${process.env.GITHUB_REPOSITORY || 'omersela-rockit/rockit-uptime-monitor'}/actions">GitHub Actions</a></p>
   `;
   const text = `Only ${recent.length}/${expected} checks ran. Last check: ${minutesSinceLast === null ? 'never' : minutesSinceLast + ' minutes ago'}.`;
 

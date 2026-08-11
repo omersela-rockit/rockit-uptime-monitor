@@ -1,0 +1,39 @@
+name: Monitor supervisor (self-heal)
+
+# Watches the monitor chain and repairs it when it breaks, instead of just
+# reporting that it broke. Deliberately NOT in the monitor's concurrency group:
+# it must never queue behind the monitor, or it could not observe or fix it.
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+# Supervisor runs are seconds long; if one is somehow still going, the newer
+# check is the more useful one.
+concurrency:
+  group: monitor-supervisor
+  cancel-in-progress: true
+
+jobs:
+  supervise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install script dependencies
+        run: npm ci --prefix scripts
+
+      - name: Check cadence and repair if broken
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+        run: node scripts/supervisor.js

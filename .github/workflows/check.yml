@@ -1,13 +1,16 @@
 name: Uptime monitor (5-minute loop)
 
-# GitHub's `schedule:` trigger is unreliable -- measured gaps of 3.5-13 hours
-# when it was configured to fire every 15 minutes. So the cadence is NOT left to
-# GitHub: one job stays alive for ~5.5 hours and runs a check every 5 minutes
-# itself, then hands off to a fresh run. The schedule below is only a safety net
-# that restarts the chain if it ever dies.
+# The cadence is NOT left to GitHub's `schedule:` trigger, which is unreliable
+# (measured 5-13 hour gaps). Instead one job stays alive for ~5.5 hours running a
+# check every 5 minutes itself, then hands off to a fresh run.
+#
+# There is deliberately no `schedule:` here. It used to have one as a safety net,
+# but firing it into this concurrency group was what actually BROKE the chain:
+# GitHub keeps only one pending run per group, so each scheduled run cancelled
+# the previous pending one -- including the handoff run. That produced an endless
+# cancel cascade where nothing ever started (13h and 5.5h outages on Aug 6-7).
+# Restarts are now handled by supervisor.yml, which stays outside this group.
 on:
-  schedule:
-    - cron: '*/15 * * * *'
   workflow_dispatch: {}
 
 permissions:
