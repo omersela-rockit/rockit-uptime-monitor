@@ -30,9 +30,24 @@ const RETRY_DELAY_MS = 5000;
 const CONFIRM_FAILURES_DEFINITIVE = 2;
 const CONFIRM_FAILURES_NETWORK = 3;
 
+// Failures that arrive as a correlated batch need far more confirmation.
+// Measured evidence: on 2026-08-28 eleven sites and on 2026-08-30 fifteen sites
+// "failed" in a single cycle, and eight of them recovered in exactly 12 minutes
+// together. Unrelated sites on different hosts do not fail and recover in
+// lockstep -- that is congestion on our side. Genuine outages in the same data
+// lasted ~3 hours, so demanding 5 cycles (~25 min) drops the false waves while
+// still catching everything real.
+const CONFIRM_FAILURES_CORRELATED = 5;
+
+// A cycle with at least this many simultaneous failures is treated as a
+// correlated wave rather than N independent outages.
+const CORRELATED_WAVE_MIN = 3;
+
 // If this share of all sites fails in one cycle, stop trusting the result until
-// the canaries below confirm the runner can reach the internet at all.
-const MASS_FAILURE_RATIO = 0.25;
+// the canaries below confirm the runner can reach the internet at all. Set low
+// on purpose: the 11- and 15-site waves above were only 13% and 17% of the list
+// and slipped under the old 25% threshold without ever triggering a canary check.
+const MASS_FAILURE_RATIO = 0.1;
 
 // Big, independently-hosted, extremely reliable endpoints. If these are also
 // unreachable, the fault is on this end -- no real event takes Google, Cloudflare
@@ -50,11 +65,19 @@ const NETWORK_ERROR_PATTERNS = [
   'network',
 ];
 
-function requiredFailures(error) {
+function requiredFailures(error, correlated = false) {
+  // Anything that showed up as part of a simultaneous batch has to prove itself
+  // over several cycles, whatever the error text says.
+  if (correlated) return CONFIRM_FAILURES_CORRELATED;
   if (!error) return CONFIRM_FAILURES_DEFINITIVE;
   const lower = String(error).toLowerCase();
   const isNetwork = NETWORK_ERROR_PATTERNS.some((p) => lower.includes(p.toLowerCase()));
-  return isNetwork ? CONFIRM_FAILURES_NETWORK : CONFIRM_FAILURES_DEFINITIVE;
+  // 5xx used to count as "definitive" on the assumption a server error is a
+  // trustworthy signal. It isn't: seven unrelated sites returned 500 in the same
+  // cycle on 2026-08-30 and all recovered minutes later. A CDN or overloaded
+  // origin produces these transiently, so they get the longer confirmation.
+  const isServerError = /server error 5\d\d/.test(lower);
+  return isNetwork || isServerError ? CONFIRM_FAILURES_NETWORK : CONFIRM_FAILURES_DEFINITIVE;
 }
 
 // How many recent check timestamps to keep for the hourly self-audit.
@@ -177,6 +200,39 @@ function recordHeartbeat(nowIso = new Date().toISOString()) {
   heartbeat.checks.push(nowIso);
   heartbeat.checks = heartbeat.checks.slice(-HEARTBEAT_KEEP);
   fs.writeFileSync(HEARTBEAT_FILE, JSON.stringify(heartbeat, null, 2));
+}
+
+// Last line of defence before an email goes out: re-check the site on its own,
+// outside the concurrent batch, with a much longer timeout. The normal cycle
+// fires six requests at once on a shared cloud runner, which is exactly the
+// condition that makes a merely-slow site look dead. If the site answers here,
+// it was never down and nobody should be woken up about it.
+const VERIFY_TIMEOUT_MS = 45000;
+
+async function verifyStillDown(site) {
+  try {
+    const res = await axios.request({
+      url: site.url,
+      method: 'GET',
+      timeout: VERIFY_TIMEOUT_MS,
+      validateStatus: () => true,
+      maxRedirects: 5,
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
+      },
+    });
+    // Same rule the normal check uses: an answer that isn't a server error means
+    // the site is serving people, even if it is slow or refuses our user agent.
+    if (res.status < 500) {
+      return { stillDown: false, evidence: `verification request returned HTTP ${res.status}` };
+    }
+    return { stillDown: true, evidence: `verification request also returned HTTP ${res.status}` };
+  } catch (err) {
+    return { stillDown: true, evidence: `verification request failed too: ${err.code || err.message}` };
+  }
 }
 
 // Independent proof of whether this runner can reach the internet right now.
@@ -464,6 +520,17 @@ async function main() {
   const statusMap = {};
   const nowIso = new Date().toISOString();
 
+  // Several sites failing in the same cycle is the signature of a problem on our
+  // side, not many independent outages, so everything in this cycle is held to
+  // the stricter confirmation bar.
+  const isCorrelatedWave = failed >= CORRELATED_WAVE_MIN;
+  if (isCorrelatedWave) {
+    console.log(
+      `[correlated] ${failed} sites failed in this cycle -- requiring ${CONFIRM_FAILURES_CORRELATED} ` +
+        'consecutive failures before alerting on any of them'
+    );
+  }
+
   // Group the currently-failing sites by the IP they resolve to. When a batch of
   // client sites goes dark at once it is almost always one shared server, and
   // saying so turns twenty confusing emails into one clear incident.
@@ -498,11 +565,36 @@ async function main() {
 
     // Only email once the failure has been confirmed by later checks, and only
     // email a recovery if we actually told anyone it was down in the first place.
-    const needed = requiredFailures(result.error);
+    // A failure that arrived alongside others is held to the stricter bar, and a
+    // site keeps that stricter bar for the whole outage so it can't sneak an
+    // alert out on a later cycle where it happens to fail alone.
+    const correlated = isCorrelatedWave || !!prevEntry.correlatedFailure;
+    const needed = requiredFailures(result.error, correlated);
     let alerted = wasAlerted;
     let diagnosis = prevEntry.diagnosis || null;
     if (result.status === 'down' && !wasAlerted && failures >= needed) {
-      console.log(`[alert] ${site.name} -> DOWN confirmed ${failures}x (${result.error})`);
+      // Second opinion before anyone is emailed.
+      const verdict = await verifyStillDown(site);
+      if (!verdict.stillDown) {
+        console.log(
+          `[verify] ${site.name} answered on an unthrottled retry (${verdict.evidence}) -- ` +
+            'suppressing what would have been a false alarm'
+        );
+        statusMap[site.name] = {
+          status: 'up',
+          statusCode: null,
+          error: null,
+          responseTimeMs: result.responseTimeMs,
+          lastCheckedAt: nowIso,
+          downSince: null,
+          consecutiveFailures: 0,
+          alerted: false,
+          correlatedFailure: false,
+          diagnosis: null,
+        };
+        continue;
+      }
+      console.log(`[alert] ${site.name} -> DOWN confirmed ${failures}x, ${verdict.evidence} (${result.error})`);
       // Only diagnosed at the moment of alerting: it costs several probes, and
       // this is exactly when someone needs to know the cause.
       diagnosis = await diagnose(site, result, { downPeers }).catch((e) => {
@@ -540,6 +632,9 @@ async function main() {
       downSince,
       consecutiveFailures: failures,
       alerted,
+      // Sticky for the duration of an outage so the stricter bar survives cycles
+      // where this site happens to be the only one failing; cleared on recovery.
+      correlatedFailure: result.status === 'down' ? correlated : false,
       diagnosis,
     };
   }
